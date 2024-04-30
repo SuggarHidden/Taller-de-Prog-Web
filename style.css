@@ -5,8 +5,7 @@ html, body {
 }
 
 body {
-    background-color: black;
-
+   background: radial-gradient(50% 50% at 50% 50%, #000 0%, #319DBF 44%, #000 100%);
 }
 
 header {
@@ -16,9 +15,15 @@ header {
 
 header > a > h1, header > a {
     display: flex;
+    color: #FFF;
+    font-family: Inter;
     font-size: large;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
     flex: 1;
-
+    text-decoration: none;
+    cursor:default;
 }
 
 #noStyle {
@@ -31,12 +36,51 @@ header > a > h1, header > a {
     flex: 1;
     align-items: center;
     justify-content: center;
+    font-family: Inter;
+}
+
+#options > a {
+    text-decoration: none;
 }
 
 #options > *, #userOptions > *, header > a > h1 {
     margin-right: 1%;
     margin-left: 1%;
     color: white;
+}
+
+#btnLogging {
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    border: 1px solid white;
+    cursor: pointer;
+    padding: 10px 20px;
+
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#btnRegister {
+    border: 1px solid white;
+    border-radius: 10px;
+    font-family: Inter;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: linear-gradient(180deg, #18C8FF 0%, #933FFE 100%);
+
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 #userOptions {
@@ -55,19 +99,62 @@ header > a > h1, header > a {
     justify-content: center;
 }
 
-.container > h2 {
-    margin-bottom: 0;
+.imagenes {
+    display: flex;
 }
 
-/**
-.circle {
-    width: 20%;
-    height: 30%;
-    display: flex;
-    background-color: #319DBF;
-    border-radius: 50%;
-    position: absolute;
-    z-index: 1
-  }
+#estrella1 {
+    width: 61px;
+    height: 60px;
+    fill: #FFF;
+}
 
-*//
+#estrellita2 {
+    display: flex;
+    width: 74px;
+    height: 74px;
+    fill: #FFF;
+}
+
+.container > h2 {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-bottom: 0;
+
+}
+
+.container > p {
+    color: #C1C1C1;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    line-height: normal;
+    height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 600;
+    width: 413px;
+    display: flex;
+}
+
+#btnInfo {
+    width: 144px;
+    height: 54px;
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    background: linear-gradient(180deg, #18C8FF 0%, #933FFE 100%);
+
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
