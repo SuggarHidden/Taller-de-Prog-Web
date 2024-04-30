@@ -158,3 +158,132 @@ header > a > h1, header > a {
     font-weight: 600;
     line-height: normal;
 }
+
+/*
+informacion html
+*/
+
+#infBody {
+    background: #000;
+}
+
+#titulo {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.eclipse {
+    width: 221px;
+    height: 302.4px;
+    flex-shrink: 0;
+    background: linear-gradient(144deg, rgba(183, 56, 56, 0.47) 15.86%, #FFF1C1 100%);
+    filter: blur(150px);
+}
+.eclipse2 {
+    width: 221px;
+    height: 302.4px;
+    flex-shrink: 0;
+    border-radius: 302.4px;
+    background: linear-gradient(142deg, #225D94 18.33%, #F616FB 103.79%);
+    filter: blur(150px);
+
+}
+
+.container2 {
+    text-align: center;
+    font-style: normal;
+    line-height: normal;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+}
+
+.inf1 {
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: Inter;
+    font-style: normal;
+    line-height: normal;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.eclipse {
+    width: 221px;
+    height: 302.4px;
+    flex-shrink: 0;
+    fill: linear-gradient(144deg, rgba(183, 56, 56, 0.47) 15.86%, #FFF1C1 100%);
+    filter: blur(150px);
+}
+
+#tit2 {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: left;
+}
+
+.inf2 {
+    color: #FFF;
+    font-family: Inter;
+    font-style: normal;
+    line-height: normal;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.eclipse2 {
+    background: linear-gradient(142deg, #225D94 18.33%, #F616FB 103.79%);
+    filter: blur(150px);
+}
+
+#texto2 {
+    border-radius: 302.4px;
+}
+
+.inf3 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.eclipse3 {
+    width: 177px;
+    height: 211.2px;
+    background: linear-gradient(144deg, #70FF00 15.86%, #00CBF8 73.08%);
+    filter: blur(150px);
+}
+
+.inf4 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.eclipse5 {
+    width: 279.261px;
+    height: 232.942px;
+    transform: rotate(-20.987deg);
+    flex-shrink: 0;
+    border-radius: 279.261px;
+    background: linear-gradient(142deg, #F9E18F 18.33%, #028E86 103.79%);
+    filter: blur(150px);
+}
+
+.inf5 {
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    text-align: left;
+}
