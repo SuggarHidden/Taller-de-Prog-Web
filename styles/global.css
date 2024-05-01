@@ -106,11 +106,3 @@ header > a > h1 {
   justify-content: right;
   margin-right: 1%;
 }
-
-.container {
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
