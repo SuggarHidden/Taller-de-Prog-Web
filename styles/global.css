@@ -114,6 +114,10 @@ header > a > h1 {
   color: white;
 }
 
+#main-footer  h2{
+text-align: left;
+}
+
 .footer-column {
   width: 33.33%;
   vertical-align: middle;

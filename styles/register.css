@@ -5,6 +5,8 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 #register-section h2 {
@@ -19,7 +21,7 @@
 
 #register-section form input[type="email"],
 #register-section form input[type="password"] {
-  width: 100%;
+  width: 94%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
