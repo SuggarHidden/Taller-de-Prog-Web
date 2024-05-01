@@ -1,0 +1,42 @@
+#register-section {
+  color: white;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#register-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#register-section form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#register-section form input[type="email"],
+#register-section form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#register-section form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#register-section form button:hover {
+  background-color: #0056b3;
+}
