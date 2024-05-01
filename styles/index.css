@@ -1,0 +1,292 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  color: white;
+}
+
+body {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #000 0%,
+    #319dbf 44%,
+    #000 100%
+  );
+}
+
+/* elipses */
+
+#elipses {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
+  max-height: 100vh;
+}
+
+/* Stars and coins */
+
+.imagenes {
+  display: flex;
+}
+
+#bitcoin {
+  position: absolute;
+  height: 120px;
+  top: 13%;
+  left: 25%;
+}
+
+#litecoin {
+  position: absolute;
+  height: 120px;
+  top: 63%;
+  left: 22%;
+}
+
+#solana {
+  position: absolute;
+  height: 100px;
+  top: 85%;
+  left: 25%;
+}
+
+#doge {
+  position: absolute;
+  height: 100px;
+  top: 21%;
+  right: 9%;
+}
+
+#etherium {
+  position: absolute;
+  height: 160px;
+  top: 74%;
+  right: 17%;
+}
+
+#star1 {
+  position: absolute;
+  height: 70px;
+  top: 20%;
+  left: 40%;
+}
+
+#star2 {
+  position: absolute;
+  height: 70px;
+  top: 15%;
+  left: 70%;
+}
+
+#star3 {
+  position: absolute;
+  height: 70px;
+  top: 50%;
+  left: 30%;
+}
+
+#star4 {
+  position: absolute;
+  height: 70px;
+  top: 42%;
+  right: 4%;
+}
+
+#star5 {
+  position: absolute;
+  height: 70px;
+  top: 70%;
+  left: 5%;
+}
+
+#star6 {
+  position: absolute;
+  height: 70px;
+  top: 70%;
+  right: 15%;
+}
+
+.container {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container > h2 {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+.container > p {
+  color: #c1c1c1;
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 600;
+  width: 413px;
+  display: flex;
+}
+
+#btnInfo {
+  width: 144px;
+  height: 54px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  background: linear-gradient(180deg, #18c8ff 0%, #933ffe 100%);
+
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/*
+informacion html
+*/
+
+#infBody {
+  background: #000;
+}
+
+#titulo {
+  color: #fff;
+  font-family: Inter;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.eclipse {
+  width: 221px;
+  height: 302.4px;
+  flex-shrink: 0;
+  background: linear-gradient(
+    144deg,
+    rgba(183, 56, 56, 0.47) 15.86%,
+    #fff1c1 100%
+  );
+  filter: blur(150px);
+}
+.eclipse2 {
+  width: 221px;
+  height: 302.4px;
+  flex-shrink: 0;
+  border-radius: 302.4px;
+  background: linear-gradient(142deg, #225d94 18.33%, #f616fb 103.79%);
+  filter: blur(150px);
+}
+
+.container2 {
+  text-align: center;
+  font-style: normal;
+  line-height: normal;
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+}
+
+.inf1 {
+  flex-shrink: 0;
+  color: #fff;
+  font-family: Inter;
+  font-style: normal;
+  line-height: normal;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.eclipse {
+  width: 221px;
+  height: 302.4px;
+  flex-shrink: 0;
+  fill: linear-gradient(144deg, rgba(183, 56, 56, 0.47) 15.86%, #fff1c1 100%);
+  filter: blur(150px);
+}
+
+#tit2 {
+  color: #fff;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-align: left;
+}
+
+.inf2 {
+  color: #fff;
+  font-family: Inter;
+  font-style: normal;
+  line-height: normal;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.eclipse2 {
+  background: linear-gradient(142deg, #225d94 18.33%, #f616fb 103.79%);
+  filter: blur(150px);
+}
+
+#texto2 {
+  border-radius: 302.4px;
+}
+
+.inf3 {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.eclipse3 {
+  width: 177px;
+  height: 211.2px;
+  background: linear-gradient(144deg, #70ff00 15.86%, #00cbf8 73.08%);
+  filter: blur(150px);
+}
+
+.inf4 {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.eclipse5 {
+  width: 279.261px;
+  height: 232.942px;
+  transform: rotate(-20.987deg);
+  flex-shrink: 0;
+  border-radius: 279.261px;
+  background: linear-gradient(142deg, #f9e18f 18.33%, #028e86 103.79%);
+  filter: blur(150px);
+}
+
+.inf5 {
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+  text-align: left;
+}
