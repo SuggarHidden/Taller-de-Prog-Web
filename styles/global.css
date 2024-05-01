@@ -106,3 +106,50 @@ header > a > h1 {
   justify-content: right;
   margin-right: 1%;
 }
+
+/* Footer */
+#main-footer {
+  background-color: #1b1b1b;
+  padding: 20px;
+  color: white;
+}
+
+.footer-column {
+  width: 33.33%;
+  vertical-align: middle;
+}
+
+.footer-column div {
+  padding-right: 20px;
+}
+
+.footer-column h2 {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.footer-column p {
+  color: #b4b4b4;
+  font-size: 14px;
+}
+
+.footer-column input[type="email"] {
+  padding: 8px;
+  width: 60%;
+  background: transparent;
+  color: white;
+  margin-bottom: 10px;
+  border-image: linear-gradient(180deg, #18c8ff, #933ffe) 1;
+}
+
+.footer-column p.footer-info {
+  color: #808080;
+  font-size: 12px;
+}
+
+.footer-column nav a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
