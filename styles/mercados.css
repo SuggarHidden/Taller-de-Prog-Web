@@ -1,0 +1,35 @@
+body {
+    height: 100%;
+    margin: 0;
+    color: white;
+   }
+  
+  h2 {
+    color: white;
+    text-align: center;
+  }
+  
+  .crypto-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #bitcoin, #ethereum, #dogecoin, #usdt, #litecoin {
+    padding: 2%;
+    width: 30em;
+  }
+
+  section > div {
+    display: flex;
+    color: white;
+    padding-left: 24%;
+    padding-right: 24%;
+    align-items: center;
+  }
+  
+  #crypto {
+    width: 256px;
+    padding: 40px;
+  }
+

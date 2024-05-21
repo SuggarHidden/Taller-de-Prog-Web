@@ -3,17 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="/styles/global.css" />
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="./styles/global.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/mercados.css" />
     <title>Crypto Pigeon Market</title>
   </head>
   <body>
     <header>
-      <a href="indext.html">
+      <a href="index.html">
         <h1>CRYPTO PIGEON MARKET</h1>
       </a>
       <div id="options">
-        <a href="indext.html">Inicio</a>
+        <a href="index.html">Inicio</a>
         <a href="mercados.html">Mercados</a>
         <a href="nosotros.html">Nosotros</a>
         <a href="soporte.html">Soporte</a>
@@ -23,5 +24,107 @@
         <a href="register.html"><button id="btnRegister">Registrate</button></a>
       </div>
     </header>
+    <div class="crypto-section">
+      <section id="bitcoin">
+        <h2>Bitcoin (BTC)</h2>
+        <p><strong>Fecha de creación:</strong> 2009</p>
+        <p><strong>Creador:</strong> Satoshi Nakamoto</p>
+        <p>Bitcoin es la primera criptomoneda creada y es conocida como el oro digital. Es una moneda descentralizada y utiliza la tecnología blockchain para asegurar y verificar transacciones.</p>
+        <p><strong>Características clave:</strong></p>
+        <ul>
+            <li>Oferta limitada a 21 millones de BTC</li>
+            <li>Descentralización</li>
+            <li>Seguridad a través del proof-of-work</li>
+        </ul>
+      </section>
+      <section id="ethereum">
+        <h2>Ethereum (ETH)</h2>
+        <p><strong>Fecha de creación:</strong> 2015</p>
+        <p><strong>Creador:</strong> Vitalik Buterin</p>
+        <p>Ethereum es una plataforma descentralizada que permite la creación de contratos inteligentes y aplicaciones descentralizadas (dApps). Su criptomoneda nativa es el Ether (ETH).</p>
+        <p><strong>Características clave:</strong></p>
+        <ul>
+            <li>Contratos inteligentes</li>
+            <li>dApps</li>
+            <li>Paso a proof-of-stake (Ethereum 2.0)</li>
+        </ul>
+      </section>
+      <section id="litecoin">
+        <h2>Litecoin (LTC)</h2>
+        <p><strong>Fecha de creación:</strong> 2011</p>
+        <p><strong>Creador:</strong> Charlie Lee</p>
+        <p>Litecoin es una criptomoneda que fue creada como una versión más ligera de Bitcoin. Se caracteriza por tener tiempos de confirmación más rápidos y una eficiencia de almacenamiento mejorada.</p>
+        <p><strong>Características clave:</strong></p>
+        <ul>
+            <li>Tiempos de bloque de 2.5 minutos</li>
+            <li>Scrypt como algoritmo de hash</li>
+            <li>Mayor suministro máximo de 84 millones de LTC</li>
+        </ul>
+      </section>
+      <section id="dogecoin">
+        <h2>Dogecoin (DOGE)</h2>
+        <p><strong>Fecha de creación:</strong> 2013</p>
+        <p><strong>Creadores:</strong> Billy Markus y Jackson Palmer</p>
+        <p>Dogecoin es una criptomoneda basada en el popular meme "Doge". Aunque empezó como una broma, ha ganado una gran comunidad y es utilizada principalmente para propinas y donaciones.</p>
+        <p><strong>Características clave:</strong></p>
+        <ul>
+            <li>Bajas tarifas de transacción</li>
+            <li>Alta oferta ilimitada</li>
+            <li>Comunidad activa y fuerte</li>
+        </ul>
+      </section>
+      <section id="usdt">
+        <h2>Tether (USDT)</h2>
+        <p><strong>Fecha de creación:</strong> 2014</p>
+        <p><strong>Creadores:</strong> Brock Pierce, Reeve Collins, y Craig Sellars</p>
+        <p>Tether (USDT) es una criptomoneda stablecoin que está vinculada al valor del dólar estadounidense. Está diseñada para mantener un valor estable y es utilizada frecuentemente en transacciones y como refugio durante la volatilidad del mercado.</p>
+        <p><strong>Características clave:</strong></p>
+        <ul>
+            <li>Valor vinculado al dólar estadounidense</li>
+            <li>Alto volumen de transacciones</li>
+            <li>Utilizada como medio de intercambio y refugio de valor</li>
+        </ul>
+      </section>
+    </div>
+    <script src="main.js"></script>
   </body>
+  <footer id="main-footer">
+    <table style="width: 100%">
+      <tr>
+        <td class="footer-column">
+          <div>
+            <h2>PIGEON CRYPTO MARKET</h2>
+            <p>
+              PIGEON CRYPTO MARKET, el principal mercado, hace que comprar y
+              vender bitcoins en efectivo, con tarjeta o mediante
+              transferencia bancaria sea facilísimo.
+            </p>
+            <p>
+              Regístrate para recibir las últimas noticias, descuentos y mucho
+              más sobre las criptomonedas.
+            </p>
+            <input type="email" placeholder="correo" />
+            <p class="footer-info">
+              © 2024 Lorena Kim - Gary Sanchez | Taller Web
+            </p>
+          </div>
+        </td>
+        <td class="footer-column">
+          <nav>
+            <a href="/mercados.html">Mercado</a><br />
+            <a href="/nosotros.html">Nosotros</a><br />
+            <a href="/soporte.html">Soporte</a><br />
+            <a href="/noticias.html">Noticias</a><br />
+          </nav>
+        </td>
+        <td class="footer-column">
+          <nav>
+            <a href="/privacity.html">Politica de Privacidad</a><br />
+            <a href="/terms.html">Terminos del servicio</a><br />
+            <a href="/agreement.html">Acuerdo de informacion</a><br />
+          </nav>
+        </td>
+      </tr>
+    </table>
+  </footer>
 </html>
