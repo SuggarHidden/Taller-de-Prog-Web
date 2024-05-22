@@ -1,0 +1,13 @@
+body {
+    height: 100%;
+    margin: 0;
+    color: white;
+}
+
+.support-header h2 {
+    background-color: rgb(31 29 29 / 83%);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+    padding-left: 2%;
+}
