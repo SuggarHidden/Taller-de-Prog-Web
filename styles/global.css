@@ -19,6 +19,15 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+.logo-image {
+  display: none;
+  width: 40px;
+}
+
+.interface {
+  display: none;
+}
+
 /* NAV */
 
 header {
@@ -152,4 +161,102 @@ header > a > h1 {
   text-decoration: none;
   display: block;
   text-align: center;
+}
+
+@media (max-width: 900px) {
+  /* for header */
+  #options {
+    display: none;
+  }
+
+  .logo-image {
+    display: inline-block;
+  }
+  .interface {
+   display: inline-block;
+  }
+
+  header a h1 {
+    display: none;
+  
+  }
+
+}
+
+@media (max-width: 690px) {
+  /* for header */
+  #btnLogging, #btnRegister {
+    padding: 10px 10px;
+    font-size: 10px;
+  }
+
+  #star3 {
+    display: none;
+  }
+
+  .logo-image {
+    width: 40px;
+  }
+}
+
+@media (max-width: 431px) {
+
+
+  /* for header */
+  header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+  }
+  .logo-image {
+    width: 40px;
+  }
+
+  /* for footer */
+  .footer-elements {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-column {
+      width: 100%;
+  }
+
+  .footer-column nav {
+      display: flex;
+      flex-direction: row;
+  }
+
+  .footer-column a {
+      width: 20%;
+      margin: 0.2 rem;
+  }
+
+  .footer-column nav {
+      margin-top: 1rem;
+      font-size: 0.8rem;
+  }
+
+  .footer-column nav a {
+      width: 33.3%;
+  }
+
+  .service-options .option h4 {
+      font-size: 1rem; 
+  }
+  .faq h3, .self-service h3 {
+      font-size: 1.2rem; 
+  }
+
+  .faq-item h4 {
+      font-size: 1rem; 
+  }
+  .search-bar input {
+      width: 200px;
+  }
+
+  .option img {
+      width: 30%;
+  }
 }
