@@ -17,7 +17,12 @@ section > div {
   align-items: center;
 }
 
+
 #crypto {
-  width: 256px;
+  width: 40%;
   padding: 40px;
+}
+
+div img {
+  width: 50%;
 }

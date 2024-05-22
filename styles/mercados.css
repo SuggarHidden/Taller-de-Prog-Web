@@ -8,16 +8,49 @@ body {
     color: white;
     text-align: center;
   }
+
+  .support-header h2 {
+    background-color: rgb(31 29 29 / 83%);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+    padding-left: 2%;
+}
   
   .crypto-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: column;
   }
 
   #bitcoin, #ethereum, #dogecoin, #usdt, #litecoin {
     padding: 2%;
-    width: 30em;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .info-section {
+    width: 50%;
+  }
+
+
+
+  .crypto-title {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+  }
+
+  .crypto-image {
+    width: 48px;
+    height: 48px;
+    margin-right: 1em;
   }
 
   section > div {
@@ -33,3 +66,36 @@ body {
     padding: 40px;
   }
 
+  .crypto-graph {
+    width: 128px;
+    height: 128px;
+  }
+
+
+  /* tabla de mercados */
+  tr {
+    text-align: left;
+  }
+
+  td {
+    color: #cccccc;
+  }
+
+
+
+  
+@media (max-width: 845px) {
+  #bitcoin, #ethereum, #dogecoin, #usdt, #litecoin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-section {
+    width: 90%;
+  }
+
+  .crypto-stats {
+    width: 90%;
+  }
+}
