@@ -10,20 +10,20 @@
   </head>
   <body>
     <header>
-      <a href="index.html">
+      <a href="index.php">
         <h1>CRYPTO PIGEON MARKET</h1>
         <img src="./images/logo.png" alt="Crypto Pigeon Market Logo" class="logo-image">
         <img src="./images/interface.png" alt="Crypto Pigeon Market Options" class="interface">
       </a>
       <div id="options">
-        <a href="index.html">Inicio</a>
-        <a href="mercados.html">Mercados</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="soporte.html">Soporte</a>
+        <a href="index.php">Inicio</a>
+        <a href="mercados.php">Mercados</a>
+        <a href="nosotros.php">Nosotros</a>
+        <a href="soporte.php">Soporte</a>
       </div>
       <div id="userOptions">
-        <a href="login.html"><button id="btnLogging">Inicia Sesion</button></a>
-        <a href="register.html"><button id="btnRegister">Registrate</button></a>
+        <a href="login.php"><button id="btnLogging">Inicia Sesion</button></a>
+        <a href="register.php"><button id="btnRegister">Registrate</button></a>
       </div>
     </header>
     <section class="support-header">
@@ -111,17 +111,17 @@
           </td>
           <td class="footer-column">
             <nav>
-              <a href="./mercados.html">Mercado</a><br />
-              <a href="./nosotros.html">Nosotros</a><br />
-              <a href="./soporte.html">Soporte</a><br />
-              <a href="./noticias.html">Noticias</a><br />
+              <a href="./mercados.php">Mercado</a><br />
+              <a href="./nosotros.php">Nosotros</a><br />
+              <a href="./soporte.php">Soporte</a><br />
+              <a href="./noticias.php">Noticias</a><br />
             </nav>
           </td>
           <td class="footer-column">
             <nav>
-              <a href="./privacity.html">Politica de Privacidad</a><br />
-              <a href="./terms.html">Terminos del servicio</a><br />
-              <a href="./agreement.html">Acuerdo de informacion</a><br />
+              <a href="./privacity.php">Politica de Privacidad</a><br />
+              <a href="./terms.php">Terminos del servicio</a><br />
+              <a href="./agreement.php">Acuerdo de informacion</a><br />
             </nav>
           </td>
         </tr>

@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -10,54 +10,67 @@
   </head>
   <body>
     <header>
-      <a href="index.html">
+      <a href="index.php">
         <h1>CRYPTO PIGEON MARKET</h1>
-        <img src="./images/logo.png" alt="Crypto Pigeon Market Logo" class="logo-image">
-        <img src="./images/interface.png" alt="Crypto Pigeon Market Options" class="interface">
+        <img
+          src="./images/logo.png"
+          alt="Crypto Pigeon Market Logo"
+          class="logo-image"
+        />
+        <img
+          src="./images/interface.png"
+          alt="Crypto Pigeon Market Options"
+          class="interface"
+        />
       </a>
       <div id="options">
-        <a href="index.html">Inicio</a>
-        <a href="mercados.html">Mercados</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="soporte.html">Soporte</a>
+        <a href="index.php">Inicio</a>
+        <a href="mercados.php">Mercados</a>
+        <a href="nosotros.php">Nosotros</a>
+        <a href="soporte.php">Soporte</a>
       </div>
       <div id="userOptions">
-        <a href="login.html"><button id="btnLogging">Inicia Sesion</button></a>
-        <a href="register.html"><button id="btnRegister">Registrate</button></a>
+        <a href="login.php"><button id="btnLogging">Inicia Sesion</button></a>
+        <a href="register.php"><button id="btnRegister">Registrate</button></a>
       </div>
     </header>
     <section class="support-header">
-        <h2>Entregable 3</h2>
+      <h2>Entregable 3</h2>
     </section>
 
     <section>
-        <h1>Construir Triángulo</h1>
-    <form id="triangleForm" onsubmit ="triangulo(event)">
+      <h1>Construir Triángulo</h1>
+      <form id="triangleForm" onsubmit="triangulo(event)">
         <label for="character">Ingrese un carácter:</label>
-        <input type="text" id="character" name="character" maxlength="1" required>
-        <br>
+        <input
+          type="text"
+          id="character"
+          name="character"
+          maxlength="1"
+          required
+        />
+        <br />
         <label for="size">Ingrese el tamaño (N):</label>
-        <input type="number" id="size" name="size" min="1" required>
-        <br>
+        <input type="number" id="size" name="size" min="1" required />
+        <br />
         <button type="submit">Construir</button>
-    </form>
-    <pre id="triangle"></pre>
-    </section>
-    
-    <section>
-        <h1>Determinar Signo Zodiacal</h1>
-    <form id="zodiacForm" onsubmit ="signo(event)">
-        <label for="birthdate">Ingrese su fecha de nacimiento:</label>
-        <input type="date" id="birthdate" name="birthdate" required>
-        <br><br>
-        <button type="submit">Mostrar Signo</button>
-    </form>
-    <div id="zodiac-result">
-        <img id="zodiac-image" src="" alt="" style="display: none;">
-        <div id="zodiac-description"></div>
-    </div>
+      </form>
+      <pre id="triangle"></pre>
     </section>
 
+    <section>
+      <h1>Determinar Signo Zodiacal</h1>
+      <form id="zodiacForm" onsubmit="signo(event)">
+        <label for="birthdate">Ingrese su fecha de nacimiento:</label>
+        <input type="date" id="birthdate" name="birthdate" required />
+        <br /><br />
+        <button type="submit">Mostrar Signo</button>
+      </form>
+      <div id="zodiac-result">
+        <img id="zodiac-image" src="" alt="" style="display: none" />
+        <div id="zodiac-description"></div>
+      </div>
+    </section>
 
     <footer id="main-footer">
       <table style="width: 100%">
@@ -74,7 +87,12 @@
                 Regístrate para recibir las últimas noticias, descuentos y mucho
                 más sobre las criptomonedas.
               </p>
-              <input type="email" placeholder="correo" id = "footer-email" onkeydown="footer(event)"/>
+              <input
+                type="email"
+                placeholder="correo"
+                id="footer-email"
+                onkeydown="footer(event)"
+              />
               <p class="footer-info">
                 © 2024 Lorena Kim - Gary Sanchez | Taller Web
               </p>
@@ -82,17 +100,17 @@
           </td>
           <td class="footer-column">
             <nav>
-              <a href="./mercados.html">Mercado</a><br />
-              <a href="./nosotros.html">Nosotros</a><br />
-              <a href="./soporte.html">Soporte</a><br />
-              <a href="./noticias.html">Noticias</a><br />
+              <a href="./mercados.php">Mercado</a><br />
+              <a href="./nosotros.php">Nosotros</a><br />
+              <a href="./soporte.php">Soporte</a><br />
+              <a href="./noticias.php">Noticias</a><br />
             </nav>
           </td>
           <td class="footer-column">
             <nav>
-              <a href="./privacity.html">Politica de Privacidad</a><br />
-              <a href="./terms.html">Terminos del servicio</a><br />
-              <a href="./agreement.html">Acuerdo de informacion</a><br />
+              <a href="./privacity.php">Politica de Privacidad</a><br />
+              <a href="./terms.php">Terminos del servicio</a><br />
+              <a href="./agreement.php">Acuerdo de informacion</a><br />
             </nav>
           </td>
         </tr>

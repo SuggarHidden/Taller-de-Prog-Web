@@ -11,20 +11,20 @@
   <body>
     <img id="elipses" src="./images/elipses.svg" alt="elipses" />
     <header>
-      <a href="index.html">
+      <a href="index.php">
         <h1>CRYPTO PIGEON MARKET</h1>
         <img src="./images/logo.png" alt="Crypto Pigeon Market Logo" class="logo-image">
         <img src="./images/interface.png" alt="Crypto Pigeon Market Options" class="interface">
       </a>
       <div id="options">
-        <a href="index.html">Inicio</a>
-        <a href="mercados.html">Mercados</a>
-        <a href="nosotros.html">Nosotros</a>
-        <a href="soporte.html">Soporte</a>
+        <a href="index.php">Inicio</a>
+        <a href="mercados.php">Mercados</a>
+        <a href="nosotros.php">Nosotros</a>
+        <a href="soporte.php">Soporte</a>
       </div>
       <div id="userOptions">
-        <a href="login.html"><button id="btnLogging">Inicia Sesion</button></a>
-        <a href="register.html"><button id="btnRegister">Registrate</button></a>
+        <a href="login.php"><button id="btnLogging">Inicia Sesion</button></a>
+        <a href="register.php"><button id="btnRegister">Registrate</button></a>
       </div>
     </header>
     <div class="imagenes">
@@ -46,7 +46,7 @@
         ¡Consulta, analiza y toma las decisiones correcta con Crypto Pigeon, la
         plataforma más fiable del mercado!
       </p>
-      <a href="nosotros.html">
+      <a href="nosotros.php">
         <button id="btnInfo">Conoce más</button>
       </a>
     </div>
