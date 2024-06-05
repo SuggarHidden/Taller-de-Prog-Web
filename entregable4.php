@@ -29,9 +29,10 @@
       <a href="register.php"><button id="btnRegister">Registrate</button></a>
     </div>
   </header>
-  <section class="support-header">
-    <h2>Cosas que pidieron y no queremos hacer  pt. 4</h2>
-  </section>
+
+  <section class="ejercicios">
+    <h2 id="title1">Entregable</h2>
+    <p id="title2">N°4 (2-4)</p>
 
     <section id="credito">
       <h3>2. Simulador de Pago Mensual</h3>
@@ -46,7 +47,7 @@
 
         <label for="tarjeta">Tipo de tarjeta:</label>
         <select id="tarjeta" name="tarjeta" required>
-          <option value="" disabled selected>Seleccione una tarjeta</option>
+          <option value="" disabled selected >Seleccione una tarjeta</option >
           <option value="visa" <?php echo (isset($_POST['tarjeta']) && $_POST['tarjeta'] == 'visa') ? 'selected' : ''; ?>>
             Visa</option>
           <option value="mastercard" <?php echo (isset($_POST['tarjeta']) && $_POST['tarjeta'] == 'mastercard') ? 'selected' : ''; ?>>MasterCard</option>
@@ -54,7 +55,7 @@
             American Express</option>
         </select><br><br>
 
-        <input type="submit" value="Calcular">
+        <input type="submit" value="Calcular" id="bottonEnviar">
       </form>
 
       <?php
@@ -113,7 +114,7 @@
         <label for="cantidad">Cantidad de Números (N):</label>
         <input type="number" id="cantidad" name="cantidad"
           value="<?php echo isset($_POST['cantidad']) ? $_POST['cantidad'] : ''; ?>" required><br><br>
-        <input type="submit" value="Generar">
+        <input type="submit" value="Generar" id="bottonEnviar">
       </form>
 
       <?php
@@ -181,7 +182,7 @@
         <label for="num3">Número 3:</label>
         <input type="number" id="num3" name="num3" value="<?php echo isset($_POST['num3']) ? $_POST['num3'] : ''; ?>"
           required><br><br>
-        <input type="submit" value="Calcular">
+        <input type="submit" value="Calcular" id="bottonEnviar">
       </form>
 
       <?php
@@ -216,6 +217,9 @@
       ?>
     </section>
   </div>
+  </section>
+
+    
   <script src="main.js"></script>
 </body>
 <footer id="main-footer">
