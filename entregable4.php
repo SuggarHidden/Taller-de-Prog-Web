@@ -55,11 +55,12 @@
             American Express</option>
         </select><br><br>
 
-        <input type="submit" value="Calcular" id="bottonEnviar">
+        <input type="submit" value="Calcular" id="bottonEnviar" name="action">
       </form>
 
       <?php
-      if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['monto']) && isset($_POST['meses']) && isset($_POST['tarjeta'])) {
+      if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['action'] == 'Calcular' && 
+      isset($_POST['monto']) && isset($_POST['meses']) && isset($_POST['tarjeta'])) {
         $monto = floatval($_POST['monto']);
         $meses = intval($_POST['meses']);
         $tarjeta = $_POST['tarjeta'];
@@ -107,25 +108,25 @@
       }
       ?>
     </section>
-    <!-- DIOS TE ODIO UTP -->
+    
     <section id="num_aleatorios">
       <h3>3. Generar Números Aleatorios</h3>
       <form action="" method="post">
         <label for="cantidad">Cantidad de Números (N):</label>
         <input type="number" id="cantidad" name="cantidad"
           value="<?php echo isset($_POST['cantidad']) ? $_POST['cantidad'] : ''; ?>" required><br><br>
-        <input type="submit" value="Generar" id="bottonEnviar">
+        <input type="submit" value="Generar" id="bottonEnviar" name="action">
       </form>
 
       <?php
-      if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cantidad'])) {
-        // ES UN MATH RANDOM PRACTICAMENTE NO HAY MAS LOGICA
+      if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cantidad'])  && $_POST['action'] == 'Generar') {
+        // ES UN MATH RANDOM
         function generar_numero_aleatorio()
         {
           return rand(300, 2000);
         }
 
-        // ESTO ES OBVIO QUE HACE
+        // 
         function suma_digitos($numero)
         {
           $suma = 0;
@@ -136,7 +137,7 @@
           return $suma;
         }
 
-        // xD?
+        // 
         function es_par_o_impar($numero)
         {
           return ($numero % 2 == 0) ? "Par" : "Impar";
@@ -144,7 +145,7 @@
 
         $cantidad = intval($_POST['cantidad']);
 
-        // ESTO LA VERDAD NI SE COMO FUNCIONA PERO CREO QUE ESTA BIEN
+        // FUNCIONA
         echo "<h4>Resultados</h4>";
         echo "<table border='1'>
                     <tr>
@@ -169,7 +170,7 @@
       }
       ?>
     </section>
-    <!-- enserio no me pagan lo suficiente para estudiar en la utp esto es el MCD y EL MCM SE MANEJA POR ID CADA SECTION -->
+    
     <section id="mcm&mcd">
       <h3>4. MCD y MCM</h3>
       <form action="" method="post">
@@ -182,11 +183,11 @@
         <label for="num3">Número 3:</label>
         <input type="number" id="num3" name="num3" value="<?php echo isset($_POST['num3']) ? $_POST['num3'] : ''; ?>"
           required><br><br>
-        <input type="submit" value="Calcular" id="bottonEnviar">
+        <input type="submit" value="CalcularMCM" id="bottonEnviar" name="action">
       </form>
 
       <?php
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      if ($_SERVER["REQUEST_METHOD"] == "POST"  && $_POST['action'] == 'CalcularMCM') {
         function mcd($a, $b)
         {
           while ($b != 0) {
@@ -201,7 +202,7 @@
           return ($a * $b) / mcd($a, $b);
         }
 
-        //DATOS DATOS DATOS
+        //DATOS 
         $num1 = intval($_POST['num1']);
         $num2 = intval($_POST['num2']);
         $num3 = intval($_POST['num3']);
