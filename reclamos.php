@@ -36,7 +36,7 @@
         </p>
         <p>
         Según lo establecido en el Código de Protección y Defensa del Consumidor, 
-        esta empresa tiene un libro de reclamaciones disponible para usted.
+        esta empresa tiene un libro de reclamaciones disponible para ti.
         </p>
         <h2>1. Datos personales</h2>
         <label for="nombre">Nombre<span> *</span></label>
