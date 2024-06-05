@@ -3,12 +3,10 @@ body {
     margin: 0;
     color: white;
    }
-  
   h2 {
     color: white;
-   
+  
   }
-
   span {
     color: #933ffe;
   }
@@ -18,25 +16,22 @@ body {
     font-size: 3rem;
     margin: 0;
 }
-
-    #title2 {
-        text-align: left;
-        padding-left: 2%;
-        font-size: 2rem;
-        margin-top: 0;
-    }
-
-  .info-section {
-    width: 50%;
-  }
-
-  section > div {
-    display: flex;
-    color: white;
-    padding-left: 24%;
-    padding-right: 24%;
-    align-items: center;
-  }
+#title2 {
+    text-align: left;
+    padding-left: 2%;
+    font-size: 2rem;
+    margin-top: 0;
+}
+.info-section {
+  width: 50%;
+}
+section > div {
+  display: flex;
+  color: white;
+  padding-left: 24%;
+  padding-right: 24%;
+  align-items: center;
+}
 
   /* para la seccion de reclamos */
 

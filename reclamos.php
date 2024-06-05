@@ -76,7 +76,7 @@
           'reclamo' => $reclamo
         ];
 
-        // array a json no hay mas
+        // array a json
         $reclamo_json = json_encode($reclamo_data) . PHP_EOL;
 
         // Crea un archivo si no existe y escribe el reclamo

@@ -1,15 +1,7 @@
-{"nombre":"","email":"","telefono":"","producto":"","reclamo":""}
-{"nombre":"Juan","email":"ALGUNEMIL@GG.COM","telefono":"12312321312312","producto":"SEXO","reclamo":"LA TENGO CHIKITA"}
-{"nombre":"Juan","email":"ALGUNEMIL@GG.COM","telefono":"12312321312312","producto":"SEXO","reclamo":"LA TENGO CHIKITA"}
-{"nombre":"Juan","email":"ALGUNEMIL@GG.COM","telefono":"12312321312312","producto":"SEXO","reclamo":"LA TENGO CHIKITA"}
-{"nombre":"Juan","email":"ALGUNEMIL@GG.COM","telefono":"12312321312312","producto":"SEXO","reclamo":"LA TENGO CHIKITA"}
-{"nombre":"Juan","email":"ALGUNEMIL@GG.COM","telefono":"12312321312312","producto":"SEXO","reclamo":"LA TENGO CHIKITA"}
-{"nombre":"Juan","email":"ALGUNEMIL@GG.COM","telefono":"12312321312312","producto":"SEXO","reclamo":"LA TENGO CHIKITA"}
-{"nombre":"","email":"","telefono":"","producto":"","reclamo":""}
-{"nombre":"a","email":"a@a","telefono":"a","producto":"a","reclamo":"a"}
-{"nombre":"","email":"","telefono":"","producto":"","reclamo":""}
-{"nombre":"","email":"","telefono":"","producto":"","reclamo":""}
-{"nombre":"","email":"","telefono":"","producto":"","reclamo":""}
-{"nombre":"","email":"","telefono":"","producto":"","reclamo":""}
-{"nombre":"","email":"","telefono":"","producto":"","reclamo":""}
-{"nombre":"Lorena","email":"lorena@lorena","telefono":"666","producto":"sexo","reclamo":"no s\u00e9, pero sexo"}
+{"nombre":"Juan Pérez","email":"juan.perez@gmail.com","telefono":"123456789","producto":"Criptomonedas","reclamo":"No puedo acceder a mi cuenta."}
+{"nombre":"María Gómez","email":"maria.gomez@gmail.com","telefono":"987654321","producto":"Criptomonedas","reclamo":"Error en la transacción."}
+{"nombre":"Carlos Sánchez","email":"carlos.sanchez@gmail.com","telefono":"456789123","producto":"Criptomonedas","reclamo":"No recibí mi retiro."}
+{"nombre":"Ana López","email":"ana.lopez@gmail.com","telefono":"654321987","producto":"Criptomonedas","reclamo":"Mi cuenta fue hackeada."}
+{"nombre":"Luis Fernández","email":"luis.fernandez@gmail.com","telefono":"789123456","producto":"Criptomonedas","reclamo":"Problema con la verificación de identidad."}
+{"nombre":"Elena Martínez","email":"elena.martinez@gmail.com","telefono":"321987654","producto":"Criptomonedas","reclamo":"No puedo realizar una compra."}
+{"nombre":"Jorge Ramírez","email":"jorge.ramirez@gmail.com","telefono":"987321654","producto":"Criptomonedas","reclamo":"Problema con el depósito."}

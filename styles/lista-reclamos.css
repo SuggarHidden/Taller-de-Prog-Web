@@ -8,17 +8,12 @@ body {
     color: white;
    
   }
-
-  span {
-    color: #933ffe;
-  }
   #title1 {
     text-align: left;
     padding-left: 2%;
     font-size: 3rem;
     margin: 0;
 }
-
     #title2 {
         text-align: left;
         padding-left: 2%;
@@ -29,7 +24,6 @@ body {
   .info-section {
     width: 50%;
   }
-
   section > div {
     display: flex;
     color: white;

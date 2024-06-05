@@ -64,7 +64,7 @@
         $meses = intval($_POST['meses']);
         $tarjeta = $_POST['tarjeta'];
 
-        // AMO LOS OBJETOS SIIIIII ESTO ES UN OBJETO? NI IDEA PHP YA MURIO
+        // Objeto de intereses ?
         $tasas_interes = [
           'visa' => 0.03,
           'mastercard' => 0.035,
@@ -73,10 +73,10 @@
 
         $tasa_interes = $tasas_interes[$tarjeta];
 
-        // LA FORMULA RARA
+        // Fórmula para hallar cuota mensual
         $cuota_mensual = $monto * $tasa_interes / (1 - pow(1 + $tasa_interes, -$meses));
 
-        // ODIO LAS TALBAS
+        // tabla
         echo "<h4>Resultados</h4>";
         echo "<table border='1'>
                 <tr>
