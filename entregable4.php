@@ -7,6 +7,7 @@
   <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" type="text/css" href="./styles/global.css" />
   <link rel="stylesheet" type="text/css" href="./styles/mercados.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/entregable4.css" />
   <title>Crypto Pigeon Market</title>
 </head>
 
@@ -29,85 +30,9 @@
     </div>
   </header>
   <section class="support-header">
-    <h2>Cosas que pidieron y no queremos hacer</h2>
+    <h2>Cosas que pidieron y no queremos hacer  pt. 4</h2>
   </section>
 
-  <div class="crypto-section">
-    <section id="reclamos">
-      <h3>1. Libro de Reclamaciones</h3>
-      <form method="post">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required><br><br>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="telefono">Teléfono:</label>
-        <input type="tel" id="telefono" name="telefono" required><br><br>
-
-        <label for="producto">Producto o Servicio:</label>
-        <input type="text" id="producto" name="producto" required><br><br>
-
-        <label for="reclamo">Reclamo:</label><br>
-        <textarea id="reclamo" name="reclamo" rows="4" cols="50" required></textarea><br><br>
-
-        <input type="submit" value="Enviar Reclamo">
-      </form>
-
-      <h4>Todos los Reclamos</h4>
-
-      <table border="1">
-        <tr>
-          <th>Nombre</th>
-          <th>Email</th>
-          <th>Teléfono</th>
-          <th>Producto o Servicio</th>
-          <th>Reclamo</th>
-        </tr>
-        <?php
-        //ACA QUERIA PONER TEXTO PERO YA ES OBVIO OSEA LA FUNCION LO DICE NO CREO QUE SEA NECESARIO DIOS NECESITO DORIR URGENTER
-        if (file_exists('reclamos.txt')) {
-          $reclamos = file('reclamos.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-          foreach ($reclamos as $reclamo) {
-            $reclamo_data = json_decode($reclamo, true);
-            echo "<tr>
-                        <td>{$reclamo_data['nombre']}</td>
-                        <td>{$reclamo_data['email']}</td>
-                        <td>{$reclamo_data['telefono']}</td>
-                        <td>{$reclamo_data['producto']}</td>
-                        <td>{$reclamo_data['reclamo']}</td>
-                      </tr>";
-          }
-        } else {
-          echo "<tr><td colspan='5'>No hay reclamos registrados.</td></tr>";
-        }
-        ?>
-      </table>
-      <?php
-      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $nombre = htmlspecialchars($_POST['nombre']);
-        $email = htmlspecialchars($_POST['email']);
-        $telefono = htmlspecialchars($_POST['telefono']);
-        $producto = htmlspecialchars($_POST['producto']);
-        $reclamo = htmlspecialchars($_POST['reclamo']);
-
-        $reclamo_data = [
-          'nombre' => $nombre,
-          'email' => $email,
-          'telefono' => $telefono,
-          'producto' => $producto,
-          'reclamo' => $reclamo
-        ];
-
-        // array a json no hay mas
-        $reclamo_json = json_encode($reclamo_data) . PHP_EOL;
-
-        // PODRIAMOS USAR MYSQL PERO NO SE SI EL PROFE YA LO enseño que hueva ver el video
-        file_put_contents('reclamos.txt', $reclamo_json, FILE_APPEND);
-      }
-      ?>
-      </table>
-    </section>
     <section id="credito">
       <h3>2. Simulador de Pago Mensual</h3>
       <form action="" method="post">
@@ -326,7 +251,9 @@
         <nav>
           <a href="./privacity.php">Politica de Privacidad</a><br />
           <a href="./terms.php">Terminos del servicio</a><br />
-          <a href="./agreement.php">Acuerdo de informacion</a><br />
+          <a href="./reclamos.php">Libro de reclamaciones</a><br />
+          <a href="./lista-reclamos.php">Historial de reclamos</a><br />
+          <a href="./entregable4.php">Entregable 4</a><br />
         </nav>
       </td>
     </tr>

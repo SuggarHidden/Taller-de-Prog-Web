@@ -72,10 +72,11 @@
           </td>
           <td class="footer-column">
             <nav>
-              <a href="./privacity.php">Politica de Privacidad</a><br />
-              <a href="./terms.php">Terminos del servicio</a><br />
-              <a href="./agreement.php">Acuerdo de informacion</a><br />
-              <a href="./reclamos.php">Libro de reclamaciones</a><br />
+            <a href="./privacity.php">Politica de Privacidad</a><br />
+          <a href="./terms.php">Terminos del servicio</a><br />
+          <a href="./reclamos.php">Libro de reclamaciones</a><br />
+          <a href="./lista-reclamos.php">Historial de reclamos</a><br />
+          <a href="./entregable4.php">Entregable 4</a><br />
             </nav>
           </td>
         </tr>

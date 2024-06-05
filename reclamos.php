@@ -60,6 +60,29 @@
             recurra a otros mecanismos de resolución de disputas o que esto sea un requisito previo.</p>
         <input type="submit" value="ENVIAR" id="bottonEnviar">
       </form>
+      <?php
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $nombre = htmlspecialchars($_POST['nombre']);
+        $email = htmlspecialchars($_POST['email']);
+        $telefono = htmlspecialchars($_POST['telefono']);
+        $producto = htmlspecialchars($_POST['producto']);
+        $reclamo = htmlspecialchars($_POST['reclamo']);
+
+        $reclamo_data = [
+          'nombre' => $nombre,
+          'email' => $email,
+          'telefono' => $telefono,
+          'producto' => $producto,
+          'reclamo' => $reclamo
+        ];
+
+        // array a json no hay mas
+        $reclamo_json = json_encode($reclamo_data) . PHP_EOL;
+
+        // Crea un archivo si no existe y escribe el reclamo
+        file_put_contents('reclamos.txt', $reclamo_json, FILE_APPEND);
+      }
+      ?>
     </section>
    
   </body>
@@ -96,8 +119,9 @@
           <nav>
             <a href="./privacity.php">Politica de Privacidad</a><br />
             <a href="./terms.php">Terminos del servicio</a><br />
-            <a href="./agreement.php">Acuerdo de informacion</a><br />
             <a href="./reclamos.php">Libro de reclamaciones</a><br />
+            <a href="./lista-reclamos.php">Historial de reclamos</a><br />
+            <a href="./entregable4.php">Entregable 4</a><br />
           </nav>
         </td>
       </tr>
