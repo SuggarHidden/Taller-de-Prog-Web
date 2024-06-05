@@ -41,7 +41,7 @@
       <img id="star6" src="./images/star2.png" alt="star6" />
     </div>
     <div class="container">
-      <h2>LAS CRIPTOMONEDAS<br />MAS CLARAS Y SIMPLE</h2>
+      <h2>LAS CRIPTOMONEDAS<br />MAS CLARAS Y SIMPLESSS</h2>
       <p>
         ¡Consulta, analiza y toma las decisiones correcta con Crypto Pigeon, la
         plataforma más fiable del mercado!

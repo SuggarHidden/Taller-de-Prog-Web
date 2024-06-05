@@ -1,0 +1,89 @@
+body {
+    height: 100%;
+    margin: 0;
+    color: white;
+   }
+  
+  h2 {
+    color: white;
+   
+  }
+
+  span {
+    color: #933ffe;
+  }
+  #title1 {
+    text-align: left;
+    padding-left: 2%;
+    font-size: 3rem;
+    margin: 0;
+}
+
+    #title2 {
+        text-align: left;
+        padding-left: 2%;
+        font-size: 2rem;
+        margin-top: 0;
+    }
+
+  .info-section {
+    width: 50%;
+  }
+
+  section > div {
+    display: flex;
+    color: white;
+    padding-left: 24%;
+    padding-right: 24%;
+    align-items: center;
+  }
+
+  /* para la seccion de reclamos */
+
+    #reclamos {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 5% 4% 5% 4%;
+    }
+
+    form {
+        background-color: rgb(31 29 29 / 83%)  ;
+        padding: 5% 20% 5% 20%;
+        color: #E5E8E8;
+    }
+
+    #bottonEnviar {
+        background-color: #933ffe;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 10px 30px
+    
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        border-radius: 10px;
+    
+    }
+  
+@media (max-width: 845px) {
+
+  .info-section {
+    width: 90%;
+  }
+
+  .crypto-stats {
+    width: 90%;
+  }
+}

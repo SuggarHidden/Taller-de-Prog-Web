@@ -75,6 +75,7 @@
               <a href="./privacity.php">Politica de Privacidad</a><br />
               <a href="./terms.php">Terminos del servicio</a><br />
               <a href="./agreement.php">Acuerdo de informacion</a><br />
+              <a href="./reclamos.php">Libro de reclamaciones</a><br />
             </nav>
           </td>
         </tr>
