@@ -37,18 +37,18 @@
     </div>
 
     <section id="opciones">
-      <!-- Formulario 1: Añadir Nueva Criptomoneda -->
+      <!-- Formulario 1: Añadir Nueva Criptomoneda-->
       <form id="createCrypto" class="form-container" action="connect.php" method="post">
         <h2 id="nomargin">Añadir Nueva Criptomoneda</h2>
         <p id="nomargin2">Completa el formulario para añadir una nueva criptomoneda a la plataforma.</p>
         <div class="form-row">
           <div class="form-group">
             <label for="name">Nombre</label>
-            <input id="name" name="name" placeholder="Bitcoin" type="text">
+            <input id="name" name="name" placeholder="Bitcoin" type="text" required>
           </div>
           <div class="form-group">
             <label for="network">Red</label>
-            <input id="network" name="network" placeholder="Ethereum" type="text">
+            <input id="network" name="network" placeholder="Ethereum" type="text" required>
           </div>
           <div class="form-group">
             <label for="creator">Creador</label>
@@ -150,7 +150,7 @@
       </form>
 
       <!-- Formulario 4: Eliminar Criptomoneda -->
-      <form id="deleteCrypto" class="form-container" action="delete.php" method="post">
+      <form id="deleteCrypto" class="form-container" action="connect.php" method="post">
         <h2 id="nomargin">Eliminar Criptomoneda</h2>
         <p id="nomargin2">Elimina una criptomoneda de la plataforma.</p>
         <div class="form-group">
@@ -158,10 +158,14 @@
           <div class="select-container">
             <select id="delete-crypto" name="delete_crypto">
               <option value="" disabled selected>Selecciona una Criptomoneda</option>
-              <option value="bitcoin">Bitcoin</option>
-              <option value="ethereum">Ethereum</option>
-              <option value="litecoin">Litecoin</option>
-              <option value="ripple">Ripple</option>
+              <?php
+              include_once 'connect.php';
+              $criptomonedas = obtenerCriptomonedas();
+
+              foreach ($criptomonedas as $cripto) {
+                echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
+              }
+              ?>
             </select>
           </div>
         </div>
@@ -171,13 +175,13 @@
       </form>
 
  <!-- Formulario 5: Eliminar Precio de Criptomoneda -->
- <form id="deletePrice" class="form-container" action="delete_price.php" method="post">
+ <form id="deletePrice" class="form-container" action="connect.php" method="post">
         <h2 id="nomargin">Eliminar Precio de Criptomoneda</h2>
         <p id="nomargin2">Elimina un precio específico de criptomoneda de la plataforma.</p>
         <div class="form-group">
           <label for="delete-price-crypto">Criptomoneda</label>
           <div class="select-container">
-            <select id="delete-price-crypto" name="delete_price_crypto">
+            <select id="delete-price-crypto" name="delete_price_crypto" required>
               <option value="" disabled selected>Selecciona una Criptomoneda</option>
               <?php
               include_once 'connect.php';
@@ -193,9 +197,15 @@
         <div class="form-group">
           <label for="price">Precio</label>
           <div class="select-container">
-            <select id="delete-crypto" name="delete_crypto">
+            <select id="delete-crypto" name="delete_crypto" required>
               <option value="" disabled selected>Selecciona un Precio</option>
-              <option value="bitcoin">Bitcoin</option>
+              <?php
+              include_once 'connect.php';
+              $precios = [];
+              foreach ($precios as $precio) {
+                echo "<option value='" . htmlspecialchars($precio['id']) . "'>" . htmlspecialchars($precio['precio']) . "</option>";
+              }
+              ?>
             </select>
           </div>
         </div>
@@ -211,5 +221,4 @@
   <script src="main.js"></script>
   <?php include 'footer.php'; ?>
 </body>
-
 </html>

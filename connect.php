@@ -53,6 +53,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create_crypto'])) {
   $enabled = isset($_POST['enabled']) ? 1 : 0;
 
   insertarCriptomoneda($name, $network, $creator, $market_cap, $description, $enabled);
+  header("Location: mercados.php");
+  exit();
 }
 function obtenerCriptomonedas()
 {
@@ -93,7 +95,7 @@ function obtenerCriptomonedasOptions()
   return $options;
 }
 
-//PRECIOS DE CRITO
+//PRECIOS DE CRIPTO
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_price'])) {
 
   $id_criptomoneda = validarDatos($_POST['crypto_price']);
@@ -124,5 +126,67 @@ function insertarPrecioCriptomoneda($id_criptomoneda, $precio, $fecha)
   $stmt->close();
   $conn->close();
 }
+
+// ELIMINAR CRIPTO
+
+function eliminarCriptomoneda($id) {
+  $conn = conectarBaseDeDatos();
+  $sql = "DELETE FROM criptomonedas WHERE id = ?";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("i", $id);
+  $stmt->execute();
+  $stmt->close();
+  $conn->close();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_crypto'])) {
+  $id_cripto = validarDatos($_POST['delete_crypto']);
+  eliminarCriptomoneda($id_cripto);
+
+
+  header("Location: mercados.php"); 
+  exit();
+}
+
+// OBTENER LOS PRECIOS DE LAS CRIPTOMONEDAS
+
+function obtenerPrecios($idCriptomoneda) {
+  $conn = conectarBaseDeDatos();
+  $sql = "SELECT id, precio FROM precios_criptomonedas WHERE id_criptomoneda = ?";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("i", $idCriptomoneda);
+  $stmt->execute();
+  $result = $stmt->get_result();
+  $precios = [];
+  while ($row = $result->fetch_assoc()) {
+    $precios[] = $row;
+  }
+  $stmt->close();
+  $conn->close();
+  return $precios;
+}
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_price_crypto'])) {
+  $idCriptomoneda = intval($_POST['delete_price_crypto']);
+  $precios = obtenerPrecios($idCriptomoneda);
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_crypto'])) {
+  $id_precio = validarDatos($_POST['delete_price_crypto']);
+
+  $conn = conectarBaseDeDatos();
+  $sql = "DELETE FROM precios_criptomonedas WHERE id = ?";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("i", $id_precio);
+  $stmt->execute();
+  $stmt->close();
+  $conn->close();
+
+  // Redirigir después de eliminar el precio
+  header("Location: mercados.php"); 
+  exit();
+}
+
 
 ?>
