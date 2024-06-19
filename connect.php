@@ -108,6 +108,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_price'])) {
   $fecha = date('Y-m-d', strtotime($fecha));
 
   insertarPrecioCriptomoneda($id_criptomoneda, $precio, $fecha);
+  header("Location: mercados.php");
+  exit();
 }
 
 function insertarPrecioCriptomoneda($id_criptomoneda, $precio, $fecha)
@@ -128,6 +130,8 @@ function insertarPrecioCriptomoneda($id_criptomoneda, $precio, $fecha)
 
   $stmt->close();
   $conn->close();
+  header("Location: mercados.php");
+  exit();
 }
 
 function obtenerUltimosPrecios($id_criptomoneda, $limite = 5)
@@ -230,6 +234,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit_crypto'])) {
   $enabled = isset($_POST['edit_enabled']) ? 1 : 0;
 
   actualizarCriptomoneda($id, $name, $network, $creator, $market_cap, $description, $enabled);
+  header("Location: mercados.php");
+  exit();
 }
 
 
@@ -260,6 +266,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_crypto'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_crypto_price'])) {
   $idPrecio = validarDatos($_POST['delete_price_crypto']);
   eliminarPrecioCriptomoneda($idPrecio);
+
+  header("Location: mercados.php");
+  exit();
 }
 
 function eliminarPrecioCriptomoneda($idPrecio)

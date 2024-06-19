@@ -86,7 +86,7 @@
           </table>
         </section>
         <section id="price-history-btc">
-          <h3>Últimos 5 Precios</h3>
+          <h3>Historial de precios</h3>
           <section class="crypto-stats">
 
 
