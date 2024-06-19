@@ -51,6 +51,14 @@
                 <label for="network">Red</label>
                 <input id="network" placeholder="Ethereum" type="text">
             </div>
+            <div class="form-group">
+                <label for="network">Creador</label>
+                <input id="network" placeholder="Nombre" type="text">
+            </div>
+            <div class="form-group">
+                <label for="network">Market Cap</label>
+                <input id="network" placeholder="$1,382,670,329,905" type="text">
+            </div>
         </div>
         <div class="form-group">
             <label for="description">Descripción</label>
@@ -77,6 +85,14 @@
             <div class="form-group">
                 <label for="network">Red</label>
                 <input id="network" placeholder="Ethereum" type="text">
+            </div>
+            <div class="form-group">
+                <label for="network">Creador</label>
+                <input id="network" placeholder="Nombre" type="text">
+            </div>
+            <div class="form-group">
+                <label for="network">Market Cap</label>
+                <input id="network" placeholder="$1,382,670,329,905" type="text">
             </div>
         </div>
         <div class="form-group">
