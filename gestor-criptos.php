@@ -118,7 +118,7 @@
             <select id="crypto-price" name="crypto_price">
               <option value="" disabled selected>Selecciona una Criptomoneda</option>
               <?php
-              include 'connect.php';
+              include_once 'connect.php';
               $criptomonedas = obtenerCriptomonedas();
 
               foreach ($criptomonedas as $cripto) {
@@ -170,43 +170,41 @@
         </div>
       </form>
 
-      <!-- Formulario 5: Eliminar Precio de Criptomoneda -->
-      <form id="deletePrice" class="form-container" action="delete_price.php" method="post">
+ <!-- Formulario 5: Eliminar Precio de Criptomoneda -->
+ <form id="deletePrice" class="form-container" action="delete_price.php" method="post">
         <h2 id="nomargin">Eliminar Precio de Criptomoneda</h2>
         <p id="nomargin2">Elimina un precio específico de criptomoneda de la plataforma.</p>
         <div class="form-group">
           <label for="delete-price-crypto">Criptomoneda</label>
           <div class="select-container">
-
             <select id="delete-price-crypto" name="delete_price_crypto">
               <option value="" disabled selected>Selecciona una Criptomoneda</option>
-                <?php
-                include 'connect.php';
-                $criptomonedas = obtenerCriptomonedas();
+              <?php
+              include_once 'connect.php';
+              $criptomonedas = obtenerCriptomonedas();
 
-                foreach ($criptomonedas as $cripto) {
-                    echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
-                }
-                ?>
+              foreach ($criptomonedas as $cripto) {
+                  echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
+              }
+              ?>
             </select>
           </div>
         </div>
         <div class="form-group">
-          <label for="delete-price-date">Fecha</label>
-          <div class="contenedor">
-            <button class="contenedor-button" type="button">
-              <span class="button-icon">📅</span>
-              Seleccionar fecha
-            </button>
-            <div class="contenedor-content">
-              <input type="date" id="delete-price-date" name="delete_price_date" class="date-picker">
-            </div>
+          <label for="price">Precio</label>
+          <div class="select-container">
+            <select id="delete-crypto" name="delete_crypto">
+              <option value="" disabled selected>Selecciona un Precio</option>
+              <option value="bitcoin">Bitcoin</option>
+            </select>
           </div>
         </div>
         <div class="form-action">
-          <button type="submit" id="rojo">Borrar precio</button>
+          <button type="submit" id="rojo">Eliminar Precio</button>
         </div>
       </form>
+
+
     </section>
   </section>
 
