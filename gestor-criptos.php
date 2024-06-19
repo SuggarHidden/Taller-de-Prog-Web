@@ -2,12 +2,12 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" type="text/css" href="./styles/global.css" />
-  <link rel="stylesheet" type="text/css" href="./styles/mercados.css" />
-  <link rel="stylesheet" type="text/css" href="./styles/gestor-criptos.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="./styles/global.css">
+  <link rel="stylesheet" type="text/css" href="./styles/mercados.css">
+  <link rel="stylesheet" type="text/css" href="./styles/gestor-criptos.css">
   <title>Crypto Pigeon Market</title>
 </head>
 
@@ -32,191 +32,186 @@
 
   <section class="gestor">
     <div id="titulo">
-    <h2 id="title1">GESTIONAR</h2>
-    <p id="title2">CRIPTOMONEDAS</p>
+      <h2 id="title1">GESTIONAR</h2>
+      <p id="title2">CRIPTOMONEDAS</p>
     </div>
-    
 
     <section id="opciones">
-    <form class="form-container">
-      <h2 id="nomargin">Añadir Nueva Criptomoneda</h2>
-      <p id="nomargin2">Completa el formulario para añadir 
-        una nueva criptomoneda a la plataforma.</p>
+      <!-- Formulario 1: Añadir Nueva Criptomoneda -->
+      <form id="createCrypto" class="form-container" action="connect.php" method="post">
+        <h2 id="nomargin">Añadir Nueva Criptomoneda</h2>
+        <p id="nomargin2">Completa el formulario para añadir una nueva criptomoneda a la plataforma.</p>
         <div class="form-row">
-            <div class="form-group">
-                <label for="name">Nombre</label>
-                <input id="name" placeholder="Bitcoin" type="text">
-            </div>
-            <div class="form-group">
-                <label for="network">Red</label>
-                <input id="network" placeholder="Ethereum" type="text">
-            </div>
-            <div class="form-group">
-                <label for="network">Creador</label>
-                <input id="network" placeholder="Nombre" type="text">
-            </div>
-            <div class="form-group">
-                <label for="network">Market Cap</label>
-                <input id="network" placeholder="$1,382,670,329,905" type="text">
-            </div>
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" placeholder="Bitcoin" type="text">
+          </div>
+          <div class="form-group">
+            <label for="network">Red</label>
+            <input id="network" name="network" placeholder="Ethereum" type="text">
+          </div>
+          <div class="form-group">
+            <label for="creator">Creador</label>
+            <input id="creator" name="creator" placeholder="Nombre" type="text">
+          </div>
+          <div class="form-group">
+            <label for="market_cap">Market Cap</label>
+            <input id="market_cap" name="market_cap" placeholder="$1,382,670,329,905" type="text">
+          </div>
         </div>
         <div class="form-group">
-            <label for="description">Descripción</label>
-            <textarea id="description" placeholder="Moneda digital descentralizada"></textarea>
+          <label for="description">Descripción</label>
+          <textarea id="description" name="description" placeholder="Moneda digital descentralizada"></textarea>
         </div>
         <div class="form-actions">
-            <label for="enabled" class="checkbox-label">
-                <input id="enabled" type="checkbox">
-                Habilitado
-            </label>
-            <button type="submit">Guardar Criptomoneda</button>
+          <label for="enabled" class="checkbox-label">
+            <input id="enabled" name="enabled" type="checkbox">
+            Habilitado
+          </label>
+          <button type="submit" name="create_crypto">Guardar Criptomoneda</button>
         </div>
-    </form>
+      </form>
 
-
-    <form class="form-container">
-      <h2 id="nomargin">Editar Criptomoneda</h2>
-      <p id="nomargin2"> Actualiza los detalles de una criptomoneda existente.</p>
+      <!-- Formulario 2: Editar Criptomoneda -->
+      <form id="editCrypto" class="form-container" action="edit.php" method="post">
+        <h2 id="nomargin">Editar Criptomoneda</h2>
+        <p id="nomargin2">Actualiza los detalles de una criptomoneda existente.</p>
         <div class="form-row">
-            <div class="form-group">
-                <label for="name">Nombre</label>
-                <input id="name" placeholder="Bitcoin" type="text">
-            </div>
-            <div class="form-group">
-                <label for="network">Red</label>
-                <input id="network" placeholder="Ethereum" type="text">
-            </div>
-            <div class="form-group">
-                <label for="network">Creador</label>
-                <input id="network" placeholder="Nombre" type="text">
-            </div>
-            <div class="form-group">
-                <label for="network">Market Cap</label>
-                <input id="network" placeholder="$1,382,670,329,905" type="text">
-            </div>
+          <div class="form-group">
+            <label for="edit-name">Nombre</label>
+            <input id="edit-name" name="edit_name" placeholder="Bitcoin" type="text">
+          </div>
+          <div class="form-group">
+            <label for="edit-network">Red</label>
+            <input id="edit-network" name="edit_network" placeholder="Ethereum" type="text">
+          </div>
+          <div class="form-group">
+            <label for="edit-creator">Creador</label>
+            <input id="edit-creator" name="edit_creator" placeholder="Nombre" type="text">
+          </div>
+          <div class="form-group">
+            <label for="edit-market_cap">Market Cap</label>
+            <input id="edit-market_cap" name="edit_market_cap" placeholder="$1,382,670,329,905" type="text">
+          </div>
         </div>
         <div class="form-group">
-            <label for="description">Descripción</label>
-            <textarea id="description" placeholder="Moneda digital descentralizada"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="edit-crypto">Criptomoneda a Editar</label>
-            <div class="select-container">
-            <select id="edit-crypto">
-                <option value="" disabled selected>Selecciona una Criptomoneda</option>
-                <option value="bitcoin">Bitcoin</option>
-                <option value="ethereum">Ethereum</option>
-                <option value="litecoin">Litecoin</option>
-                <option value="ripple">Ripple</option>
-            </select>
-    </div>
+          <label for="edit-description">Descripción</label>
+          <textarea id="edit-description" name="edit_description"
+            placeholder="Moneda digital descentralizada"></textarea>
         </div>
         <div class="form-actions">
-            <label for="enabled" class="checkbox-label">
-                <input id="enabled" type="checkbox">
-                Habilitado
-            </label>
-            <button type="submit">Actualizar Criptomoneda</button>
+          <label for="edit-enabled" class="checkbox-label">
+            <input id="edit-enabled" name="edit_enabled" type="checkbox">
+            Habilitado
+          </label>
+          <button type="submit" name="update_crypto">Actualizar Criptomoneda</button>
         </div>
-    </form>
+      </form>
 
-
-    <form class="form-container">
-      <h2 id="nomargin">Establecer Precio de Criptomoneda</h2>
-      <p id="nomargin2">Establece el precio para una criptomonedas.</p>
-      <div class="form-group">
+      <!-- Formulario 3: Establecer Precio de Criptomoneda -->
+      <form id="setPrice" class="form-container" action="connect.php" method="post">
+        <h2 id="nomargin">Establecer Precio de Criptomoneda</h2>
+        <p id="nomargin2">Establece el precio para una criptomoneda.</p>
+        <div class="form-group">
           <label for="crypto-price">Criptomoneda</label>
           <div class="select-container">
-              <select id="crypto-price">
-                  <option value="" disabled selected>Selecciona una Criptomoneda</option>
-                  <option value="bitcoin">Bitcoin</option>
-                  <option value="ethereum">Ethereum</option>
-                  <option value="litecoin">Litecoin</option>
-                  <option value="ripple">Ripple</option>
-              </select>
+            <select id="crypto-price" name="crypto_price">
+              <option value="" disabled selected>Selecciona una Criptomoneda</option>
+              <?php
+              include 'connect.php';
+              $criptomonedas = obtenerCriptomonedas();
+
+              foreach ($criptomonedas as $cripto) {
+                echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
+              }
+              ?>
+            </select>
           </div>
-      </div>
-      <div class="form-group">
+        </div>
+        <div class="form-group">
           <label for="price">Precio</label>
-          <input id="price" type="number" placeholder="Introduce el precio" class="input-field">
-      </div>
-      <div class="form-group">
+          <input id="price" name="price" type="number" step="any" placeholder="Introduce el precio" class="input-field">
+        </div>
+        <div class="form-group">
           <label for="date">Fecha</label>
           <div class="contenedor">
-              <button class="contenedor-button" type="button">
-                  <span class="button-icon">📅</span>
-                  Seleccionar fecha
-              </button>
-              <div class="contenedor-content">
-                  <input type="date" id="date-picker" class="date-picker">
-              </div>
+            <button class="contenedor-button" type="button">
+              <span class="button-icon">📅</span>
+              Seleccionar fecha
+            </button>
+            <div class="contenedor-content">
+              <input type="date" id="date-picker" name="date_picker" class="date-picker">
+            </div>
           </div>
-      </div>
-      <div class="form-action">
-            <button type="submit">Establecer precio</button>
-        </div>
-    </form>
-
-
-    <form class="form-container">
-      <h2 id="nomargin">Eliminar Criptomoneda</h2>
-      <p id="nomargin2"> Elimina una criptomoneda de la plataforma.</p>
-        <div class="form-group">
-            <label for="edit-crypto">Criptomoneda a Eliminar</label>
-            <div class="select-container">
-            <select id="edit-crypto">
-                <option value="" disabled selected>Selecciona una Criptomoneda</option>
-                <option value="bitcoin">Bitcoin</option>
-                <option value="ethereum">Ethereum</option>
-                <option value="litecoin">Litecoin</option>
-                <option value="ripple">Ripple</option>
-            </select>
-    </div>
         </div>
         <div class="form-action">
-            <button type="submit" id="rojo">Eliminar Criptomoneda</button>
+          <button type="submit" name="submit_price">Establecer precio</button>
         </div>
-    </form>
+      </form>
 
-
-    <form class="form-container">
-      <h2 id="nomargin">Eliminar Precio de Criptomoneda</h2>
-      <p id="nomargin2">Elimina un precio específico de criptomoneda de la plataforma.</p>
-      <div class="form-group">
-          <label for="crypto-price">Criptomoneda</label>
+      <!-- Formulario 4: Eliminar Criptomoneda -->
+      <form id="deleteCrypto" class="form-container" action="delete.php" method="post">
+        <h2 id="nomargin">Eliminar Criptomoneda</h2>
+        <p id="nomargin2">Elimina una criptomoneda de la plataforma.</p>
+        <div class="form-group">
+          <label for="delete-crypto">Criptomoneda a Eliminar</label>
           <div class="select-container">
-              <select id="crypto-price">
-                  <option value="" disabled selected>Selecciona una Criptomoneda</option>
-                  <option value="bitcoin">Bitcoin</option>
-                  <option value="ethereum">Ethereum</option>
-                  <option value="litecoin">Litecoin</option>
-                  <option value="ripple">Ripple</option>
-              </select>
+            <select id="delete-crypto" name="delete_crypto">
+              <option value="" disabled selected>Selecciona una Criptomoneda</option>
+              <option value="bitcoin">Bitcoin</option>
+              <option value="ethereum">Ethereum</option>
+              <option value="litecoin">Litecoin</option>
+              <option value="ripple">Ripple</option>
+            </select>
           </div>
-      </div>
-      <div class="form-group">
-          <label for="date">Fecha</label>
-          <div class="contenedor">
-              <button class="contenedor-button" type="button">
-                  <span class="button-icon">📅</span>
-                  Seleccionar fecha
-              </button>
-              <div class="contenedor-content">
-                  <input type="date" id="date-picker" class="date-picker">
-              </div>
-          </div>
-      </div>
-      <div class="form-action">
-            <button type="submit" id="rojo">Borrar precio</button>
         </div>
-    </form>
+        <div class="form-action">
+          <button type="submit" id="rojo">Eliminar Criptomoneda</button>
+        </div>
+      </form>
 
+      <!-- Formulario 5: Eliminar Precio de Criptomoneda -->
+      <form id="deletePrice" class="form-container" action="delete_price.php" method="post">
+        <h2 id="nomargin">Eliminar Precio de Criptomoneda</h2>
+        <p id="nomargin2">Elimina un precio específico de criptomoneda de la plataforma.</p>
+        <div class="form-group">
+          <label for="delete-price-crypto">Criptomoneda</label>
+          <div class="select-container">
+
+            <select id="delete-price-crypto" name="delete_price_crypto">
+              <option value="" disabled selected>Selecciona una Criptomoneda</option>
+                <?php
+                include 'connect.php';
+                $criptomonedas = obtenerCriptomonedas();
+
+                foreach ($criptomonedas as $cripto) {
+                    echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
+                }
+                ?>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="delete-price-date">Fecha</label>
+          <div class="contenedor">
+            <button class="contenedor-button" type="button">
+              <span class="button-icon">📅</span>
+              Seleccionar fecha
+            </button>
+            <div class="contenedor-content">
+              <input type="date" id="delete-price-date" name="delete_price_date" class="date-picker">
+            </div>
+          </div>
+        </div>
+        <div class="form-action">
+          <button type="submit" id="rojo">Borrar precio</button>
+        </div>
+      </form>
     </section>
   </section>
 
-    
   <script src="main.js"></script>
+  <?php include 'footer.php'; ?>
 </body>
-<?php include 'footer.php'; ?>
 
 </html>
