@@ -211,9 +211,9 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="delete-crypto-price">Precio</label>
+          <label for="delete_price_crypto">Precio</label>
           <div class="select-container">
-            <select id="delete-crypto-price" name="delete_crypto_price">
+            <select id="delete_price_crypto" name="delete_price_crypto">
               <option value="" disabled selected>Selecciona un Precio</option>
             </select>
           </div>
@@ -234,7 +234,7 @@
           xhr.onload = function () {
             if (this.status === 200) {
               const prices = JSON.parse(this.responseText);
-              const select = document.getElementById("delete-crypto-price");
+              const select = document.getElementById("delete_price_crypto");
               select.innerHTML = '<option value="" disabled selected>Selecciona un Precio</option>';
 
               prices.forEach(price => {
