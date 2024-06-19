@@ -256,6 +256,8 @@ function eliminarCriptomoneda($id)
 
   $stmt->close();
   $conn->close();
+  header("Location: mercados.php");
+  exit();
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete_crypto'])) {

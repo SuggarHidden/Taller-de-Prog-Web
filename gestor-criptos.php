@@ -56,7 +56,7 @@
           </div>
           <div class="form-group">
             <label for="market_cap">Market Cap</label>
-            <input id="market_cap" name="market_cap" placeholder="$1,382,670,329,905" type="text">
+            <input id="market_cap" name="market_cap" placeholder="$1,382,670,329,905" type="number">
           </div>
         </div>
         <div class="form-group">
@@ -175,14 +175,6 @@
           <div class="select-container">
             <select id="delete-crypto" name="delete_crypto">
               <option value="" disabled selected>Selecciona una Criptomoneda</option>
-              <?php
-              include_once 'connect.php';
-              $criptomonedas = obtenerCriptomonedas();
-
-              foreach ($criptomonedas as $cripto) {
-                echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
-              }
-              ?>
               <?php
               include_once 'connect.php';
               $criptomonedas = obtenerCriptomonedas();
