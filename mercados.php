@@ -47,6 +47,8 @@
       $description = htmlspecialchars($cripto['description']);
       $enabled = $cripto['enabled'] ? 'Sí' : 'No';
       $created_at = htmlspecialchars($cripto['created_at']);
+
+      $precios = obtenerUltimosPrecios($id);
       ?>
 
       <section id="bitcoin">
@@ -83,75 +85,34 @@
             </tr>
           </table>
         </section>
-        <!-- Aquí puedes añadir el historial de precios o cualquier otra sección que necesites -->
+        <section id="price-history-btc">
+          <h3>Últimos 5 Precios</h3>
+          <section class="crypto-stats">
+
+
+            <table>
+              <tr>
+                <th>Fecha</th>
+                <th>Precio</th>
+              </tr>
+              <?php
+              if (!empty($precios)) {
+                foreach ($precios as $precio) {
+                  echo '<tr>';
+                  echo '<td>' . htmlspecialchars($precio['fecha']) . '</td>';
+                  echo '<td>' . htmlspecialchars($precio['precio']) . '</td>';
+                  echo '</tr>';
+                }
+              } else {
+                echo '<tr><td colspan="2">No hay precios disponibles.</td></tr>';
+              }
+              ?>
+            </table>
+          </section>
+        </section>
       </section>
 
     <?php endforeach; ?>
-
-    <section id="ethereum">
-      <section class="info-section">
-        <section class="crypto-title">
-          <h2>Ethereum (ETH)</h2>
-          <img src="./images/ethereum_logo.png" alt="Ethereum Logo" class="crypto-image">
-        </section>
-        <section class="crypto-info">
-          <p>Ethereum es una plataforma descentralizada que permite la creación de contratos inteligentes
-            y aplicaciones descentralizadas (dApps). Su criptomoneda nativa es el Ether (ETH).</p>
-        </section>
-      </section>
-      <section class="crypto-stats">
-        <table>
-          <tr>
-            <th>Market Cap</th>
-            <td>$1,382,670,329,905</td>
-          </tr>
-          <tr>
-            <th>Actual Price</th>
-            <td>$70,179.73</td>
-          </tr>
-          <tr>
-            <th>Red</th>
-            <td>Ethereum</td>
-          </tr>
-          <tr>
-            <th>Creador</th>
-            <td>Hitler</td>
-          </tr>
-        </table>
-      </section>
-      <section id="price-history-btc">
-        <section class="crypto-stats">
-          <table>
-            <h2>Historial de Precios</h2>
-            <tr>
-              <th>20/05/24</th>
-              <td>$70,179.73</td>
-            </tr>
-            <tr>
-              <th>20/05/24</th>
-              <td>$70,179.73</td>
-            </tr>
-            <tr>
-              <th>20/05/24</th>
-              <td>$70,179.73</td>
-            </tr>
-            <tr>
-              <th>20/05/24</th>
-              <td>$70,179.73</td>
-            </tr>
-            <tr>
-              <th>20/05/24</th>
-              <td>$70,179.73</td>
-            </tr>
-          </table>
-        </section>
-      </section>
-    </section>
-
-    </section>
-   
-    </section>
-    </section>
   </div>
   <script src="main.js"></script>
 </body>

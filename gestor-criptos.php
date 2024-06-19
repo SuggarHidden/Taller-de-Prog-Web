@@ -73,7 +73,7 @@
       </form>
 
       <!-- Formulario 2: Editar Criptomoneda -->
-      <form id="editCrypto" class="form-container" action="edit.php" method="post">
+      <form id="editCrypto" class="form-container" action="connect.php" method="post">
         <h2 id="nomargin">Editar Criptomoneda</h2>
         <p id="nomargin2">Actualiza los detalles de una criptomoneda existente.</p>
         <div class="form-row">
@@ -98,6 +98,22 @@
           <label for="edit-description">Descripción</label>
           <textarea id="edit-description" name="edit_description"
             placeholder="Moneda digital descentralizada"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="edit-crypto">Criptomoneda a Editar</label>
+          <div class="select-container">
+            <select id="edit-crypto" name="edit_crypto">
+              <option value="" disabled selected>Selecciona una Criptomoneda</option>
+              <?php
+              include_once 'connect.php';
+              $criptomonedas = obtenerCriptomonedas();
+
+              foreach ($criptomonedas as $cripto) {
+                echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
+              }
+              ?>
+            </select>
+          </div>
         </div>
         <div class="form-actions">
           <label for="edit-enabled" class="checkbox-label">
@@ -150,7 +166,7 @@
       </form>
 
       <!-- Formulario 4: Eliminar Criptomoneda -->
-      <form id="deleteCrypto" class="form-container" action="delete.php" method="post">
+      <form id="deleteCrypto" class="form-container" action="connect.php" method="post">
         <h2 id="nomargin">Eliminar Criptomoneda</h2>
         <p id="nomargin2">Elimina una criptomoneda de la plataforma.</p>
         <div class="form-group">
@@ -158,10 +174,14 @@
           <div class="select-container">
             <select id="delete-crypto" name="delete_crypto">
               <option value="" disabled selected>Selecciona una Criptomoneda</option>
-              <option value="bitcoin">Bitcoin</option>
-              <option value="ethereum">Ethereum</option>
-              <option value="litecoin">Litecoin</option>
-              <option value="ripple">Ripple</option>
+              <?php
+              include_once 'connect.php';
+              $criptomonedas = obtenerCriptomonedas();
+
+              foreach ($criptomonedas as $cripto) {
+                echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
+              }
+              ?>
             </select>
           </div>
         </div>
@@ -170,39 +190,63 @@
         </div>
       </form>
 
- <!-- Formulario 5: Eliminar Precio de Criptomoneda -->
- <form id="deletePrice" class="form-container" action="delete_price.php" method="post">
+      <form id="deletePrice" class="form-container" action="connect.php" method="post">
         <h2 id="nomargin">Eliminar Precio de Criptomoneda</h2>
         <p id="nomargin2">Elimina un precio específico de criptomoneda de la plataforma.</p>
         <div class="form-group">
           <label for="delete-price-crypto">Criptomoneda</label>
           <div class="select-container">
-            <select id="delete-price-crypto" name="delete_price_crypto">
+            <select id="delete-price-crypto" name="delete_price_crypto" onchange="loadPrices(this.value)">
               <option value="" disabled selected>Selecciona una Criptomoneda</option>
               <?php
               include_once 'connect.php';
               $criptomonedas = obtenerCriptomonedas();
 
               foreach ($criptomonedas as $cripto) {
-                  echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
+                echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
               }
               ?>
             </select>
           </div>
         </div>
         <div class="form-group">
-          <label for="price">Precio</label>
+          <label for="delete-crypto-price">Precio</label>
           <div class="select-container">
-            <select id="delete-crypto" name="delete_crypto">
+            <select id="delete-crypto-price" name="delete_crypto_price">
               <option value="" disabled selected>Selecciona un Precio</option>
-              <option value="bitcoin">Bitcoin</option>
             </select>
           </div>
         </div>
         <div class="form-action">
-          <button type="submit" id="rojo">Eliminar Precio</button>
+          <button type="submit" id="rojo" name="delete_crypto_price">Eliminar Precio</button>
         </div>
       </form>
+
+      <script>
+        function loadPrices(idCripto) {
+          if (idCripto === "") {
+            return;
+          }
+
+          const xhr = new XMLHttpRequest();
+          xhr.open("GET", "get_prices.php?id=" + idCripto, true);
+          xhr.onload = function () {
+            if (this.status === 200) {
+              const prices = JSON.parse(this.responseText);
+              const select = document.getElementById("delete-crypto-price");
+              select.innerHTML = '<option value="" disabled selected>Selecciona un Precio</option>';
+
+              prices.forEach(price => {
+                const option = document.createElement("option");
+                option.value = price.id;
+                option.textContent = `${price.fecha}: $${price.precio}`;
+                select.appendChild(option);
+              });
+            }
+          };
+          xhr.send();
+        }
+      </script>
 
 
     </section>
