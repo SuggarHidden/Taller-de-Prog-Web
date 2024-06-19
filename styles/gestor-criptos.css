@@ -1,0 +1,266 @@
+body {
+    height: 100%;
+    margin: 0;
+    color: white;
+}
+
+h2 {
+    color: white;
+}
+
+p {
+    color: rgb(234, 220, 220);
+}
+
+span {
+    color: #933ffe;
+}
+
+#title1 {
+    text-align: left;
+    padding-left: 2%;
+    font-size: 3rem;
+    margin: 0;
+}
+
+#title2 {
+    text-align: left;
+    padding-left: 2%;
+    font-size: 2rem;
+    margin: 0;
+}
+
+#nomargin {
+    margin: 0;
+}
+#nomargin2 {
+    margin: 0 0 2em 0;
+}
+
+#opciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.info-section {
+    width: 50%;
+}
+
+section > div {
+    display: flex;
+    color: white;
+    padding-left: 24%;
+    padding-right: 24%;
+    align-items: center;
+}
+section {
+    margin: 5% 4% 5% 4%;
+}
+
+/* ESTILOS PARA TODAS LAS OPCIONES */
+
+.gestor {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /*margin: 5% 4% 5% 4%; */
+}
+
+#titulo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#rojo {
+    background: #dc3636;
+
+}
+
+
+input, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+}
+
+/* FORM STYLES */
+
+.form-container {
+    background: none;
+    padding: 20px;
+    border-radius: 8px;
+    border : 1px solid white; 
+    display: grid;
+    gap: 1rem;
+    width: 40%;
+    margin: 1rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.form-group > * + * {
+    margin-top: 0.5rem;
+
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-action button {
+    width: 100%;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background: linear-gradient(180deg, #18c8ff 0%, #933ffe 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.5);
+}
+
+.select-container {
+    position: relative;
+    width: 100%;
+    margin-top: 8px;
+}
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    appearance: none;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+/* PRECIO DE CRIPTOMONEDA*/
+
+label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contenedor {
+    position: relative;
+}
+
+.contenedor-button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button-icon {
+    margin-right: 0.5rem;
+}
+
+.contenedor-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.contenedor:hover .contenedor-content {
+    display: block;
+}
+
+.date-picker {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-button {
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+
+
+@media (max-width: 845px) {
+
+.info-section {
+width: 90%;
+}
+}

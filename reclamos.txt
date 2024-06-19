@@ -5,3 +5,4 @@
 {"nombre":"Luis Fernández","email":"luis.fernandez@gmail.com","telefono":"789123456","producto":"Criptomonedas","reclamo":"Problema con la verificación de identidad."}
 {"nombre":"Elena Martínez","email":"elena.martinez@gmail.com","telefono":"321987654","producto":"Criptomonedas","reclamo":"No puedo realizar una compra."}
 {"nombre":"Jorge Ramírez","email":"jorge.ramirez@gmail.com","telefono":"987321654","producto":"Criptomonedas","reclamo":"Problema con el depósito."}
+{"nombre":"Lorena","email":"lorena@lorena.com","telefono":"111111111","producto":"cripto","reclamo":"asd"}
