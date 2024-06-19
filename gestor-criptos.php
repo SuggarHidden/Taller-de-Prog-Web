@@ -37,18 +37,18 @@
     </div>
 
     <section id="opciones">
-      <!-- Formulario 1: Añadir Nueva Criptomoneda -->
+      <!-- Formulario 1: Añadir Nueva Criptomoneda-->
       <form id="createCrypto" class="form-container" action="connect.php" method="post">
         <h2 id="nomargin">Añadir Nueva Criptomoneda</h2>
         <p id="nomargin2">Completa el formulario para añadir una nueva criptomoneda a la plataforma.</p>
         <div class="form-row">
           <div class="form-group">
             <label for="name">Nombre</label>
-            <input id="name" name="name" placeholder="Bitcoin" type="text">
+            <input id="name" name="name" placeholder="Bitcoin" type="text" required>
           </div>
           <div class="form-group">
             <label for="network">Red</label>
-            <input id="network" name="network" placeholder="Ethereum" type="text">
+            <input id="network" name="network" placeholder="Ethereum" type="text" required>
           </div>
           <div class="form-group">
             <label for="creator">Creador</label>
@@ -167,6 +167,7 @@
 
       <!-- Formulario 4: Eliminar Criptomoneda -->
       <form id="deleteCrypto" class="form-container" action="connect.php" method="post">
+      <form id="deleteCrypto" class="form-container" action="connect.php" method="post">
         <h2 id="nomargin">Eliminar Criptomoneda</h2>
         <p id="nomargin2">Elimina una criptomoneda de la plataforma.</p>
         <div class="form-group">
@@ -174,6 +175,14 @@
           <div class="select-container">
             <select id="delete-crypto" name="delete_crypto">
               <option value="" disabled selected>Selecciona una Criptomoneda</option>
+              <?php
+              include_once 'connect.php';
+              $criptomonedas = obtenerCriptomonedas();
+
+              foreach ($criptomonedas as $cripto) {
+                echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
+              }
+              ?>
               <?php
               include_once 'connect.php';
               $criptomonedas = obtenerCriptomonedas();
@@ -255,5 +264,4 @@
   <script src="main.js"></script>
   <?php include 'footer.php'; ?>
 </body>
-
 </html>

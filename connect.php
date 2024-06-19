@@ -56,6 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create_crypto'])) {
   $enabled = isset($_POST['enabled']) ? 1 : 0;
 
   insertarCriptomoneda($name, $network, $creator, $market_cap, $description, $enabled);
+  header("Location: mercados.php");
+  exit();
 }
 function obtenerCriptomonedas()
 {
@@ -96,7 +98,7 @@ function obtenerCriptomonedasOptions()
   return $options;
 }
 
-//PRECIOS DE CRITO
+//PRECIOS DE CRIPTO
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_price'])) {
 
   $id_criptomoneda = validarDatos($_POST['crypto_price']);
