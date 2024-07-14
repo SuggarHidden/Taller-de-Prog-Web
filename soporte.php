@@ -98,7 +98,9 @@
   </section>
   <section>
     <h2>Contáctanos</h2>
-    <form action="https://formsubmit.co/your@email.com" method="POST">
+    <form action="https://formsubmit.co/lichkingnetwork@gmail.com" method="POST">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" placeholder="Tu nombre" required>
 
       <label for="email">Correo:</label>
       <input type="email" id="email" name="email" placeholder="Tu correo" required>
@@ -109,6 +111,7 @@
       <button type="submit">Enviar</button>
     </form>
   </section>
+
 
   <?php include 'footer.php'; ?>
   <script src="main.js"></script>
