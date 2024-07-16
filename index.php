@@ -46,24 +46,30 @@
         <span class="close" onclick="closeLogin()">&times;</span>
         <h2 id ="modalTitle">Iniciar sesión</h2>
         <div id="optionsLogin">
-          <button class="login-btn google" onclick="window.open('https://accounts.google.com/ServiceLogin', '_blank');">Continuar con Google</button>
-          <button class="login-btn email" onclick="showLoginForm()">Usar correo electrónico</button>
+        <div class="button-wrapper">
+            <button class="login-btn google" onclick="window.open('https://accounts.google.com/ServiceLogin', '_blank');">
+                <img src="./images/google-icon.svg" alt="Google Icon" class="button-icon">
+                Continuar con Google
+            </button>
+        </div>
+          <div class="button-wrapper">
+          <button class="login-btn email" onclick="showLoginForm()">
+          <img src="./images/user-icon.svg" alt="User Icon" class="button-icon">
+          Usar correo electrónico</button>
+          </div>
         </div>
         
         <!-- Formulario de inicio de sesión oculto -->
         <div id="loginForm" style="display:none;">
         <section class="login">
         <form action="" method="post" class="form" onsubmit="login(event)">
-          <label for="email">Correo</label>
-          <input type="email" name="email" id="email" placeholder="correo@ejemplo.com" required>
-          <label for="password">Contraseña</label>
-          <input type="password" name="password" id="password" placeholder="*******" required>
-          <label for="confirm-password">Confirmar Contraseña</label>
-          <input type="password" name="confirm-password" id="confirm-password" placeholder="*******" required>
+          <label id ="emailLabel" for="email">Correo</label>
+          <input type="email" name="email" id="email" placeholder="Correo" required>
+          <input type="password" name="password" id="password" placeholder="Contraseña" required>
+          <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirmar contraseña" required>
           <button type="submit" id="btnEnviar">Iniciar Sesión</button>
         </form>
-      </section>
-            <a href="#">¿Olvidaste tu contraseña?</a>
+        </section>
         </div>
     </div>
   </div>
