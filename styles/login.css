@@ -7,7 +7,11 @@ body {
 .login-wrap {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin: 10% 5%;
+    display: none;
+    
 }
 
 .login {
@@ -20,9 +24,9 @@ body {
     border-radius: 10px;
 }
 
-.login h2 {
-    font-size: 24px;
-    margin-bottom: 5%;
+#iniciarSesionTitle {
+    font-size: 33px;
+    font-weight: bold;
     margin-top: 0%;
   }
 
@@ -60,4 +64,93 @@ body {
 
 #btnEnviar:hover {
     background-color: #18C8FF;
+}
+
+/*  Estilos para el modal   */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+  background-color: #333;
+  margin: 15% auto;
+  padding: 20px;
+  width: 50%;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalTitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 33px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#optionsLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.login-btn {
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 15px;
+  /* font-weight: 600; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-color: rgba(255, 255, 255, 0);
+}
+
+.login-btn:hover {
+  border-color: rgb(208, 209, 211);
+  background-color: rgb(18, 18, 18);
+}
+
+.google {
+  background-color: #555;
+  font-weight: bold;
+  color: white;
+}
+
+.email {
+  background-color: #555;
+  font-weight: bold;
+  color: white;
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

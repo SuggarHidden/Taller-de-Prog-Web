@@ -7,6 +7,35 @@ let users = [
   },
 ];
 
+window.onclick = function(event) {
+  const modal = document.getElementById("myModal");
+  if (event.target == modal) {
+      modal.style.display = "none";
+      loginForm.style.display = "none";  // Ocultar formulario al cerrar modal
+  }
+}
+
+function showLogin() {
+  const modal = document.getElementById("myModal");
+  const options = document.getElementById("optionsLogin");
+  options.style.display = "flex";
+  modal.style.display = "block";
+}
+function closeLogin() {
+  const modal = document.getElementById("myModal");
+  const loginForm = document.getElementById("loginForm");
+  const options = document.getElementById("optionsLogin");
+  modal.style.display = "none";
+  loginForm.style.display = "none";
+  options.style.display = "block"; // Restablecer la visibilidad de opciones
+}
+function showLoginForm() {
+  const loginForm = document.getElementById("loginForm");
+  const options = document.getElementById("optionsLogin");
+  loginForm.style.display = "flex";
+  options.style.display = "none";
+}
+
 function register(event) {
   event.preventDefault();
   const email = document.getElementById("email").value;
