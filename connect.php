@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 function conectarBaseDeDatos()
@@ -27,6 +29,117 @@ function validarDatos($data)
   $data = htmlspecialchars($data);
   return $data;
 }
+
+/* register */
+function registrarUsuario($username, $email, $password)
+{
+  $conn = conectarBaseDeDatos();
+
+  $sql = "INSERT INTO usuarios (username, email, password) VALUES (?, ?, ?)";
+
+  $stmt = $conn->prepare($sql);
+
+  if ($stmt === false) {
+    die("Error en la preparación de la consulta: " . $conn->error);
+  }
+
+  // hash
+  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+  $stmt->bind_param("sss", $username, $email, $hashed_password);
+
+  if ($stmt->execute()) {
+    $stmt->close();
+    $conn->close();
+    return true;
+  } else {
+    echo "Error: " . $stmt->error;
+    $stmt->close();
+    $conn->close();
+    return false;
+  }
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['form_id']) && $_POST['form_id'] === 'registerForm') {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm-password'];
+
+    if ($password !== $confirm_password) {
+      echo "Las contraseñas no coinciden.";
+      exit;
+    }
+
+    if (registrarUsuario($username, $email, $password)) {
+      header("Location: index.php");
+      exit;
+    }
+  }
+}
+
+/* login */
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST['form_id']) && $_POST['form_id'] === 'loginForm') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    // Verificar las credenciales del usuario
+    $user = login($email, $password);
+
+    if ($user) {
+      // Iniciar sesión y guardar los datos del usuario en variables de sesión
+      $_SESSION['user_id'] = $user['id'];
+      $_SESSION['username'] = $user['username'];
+      $_SESSION['email'] = $user['email'];
+
+      // Redirigir al usuario a la página deseada después de iniciar sesión
+      header("Location: index.php");
+      exit;
+    } else {
+      echo "Correo o contraseña incorrectos.";
+    }
+  }
+}
+
+// Función para verificar las credenciales del usuario
+function login($email, $password)
+{
+  $conn = conectarBaseDeDatos();
+
+  $sql = "SELECT * FROM usuarios WHERE email = ?";
+  $stmt = $conn->prepare($sql);
+
+  if ($stmt === false) {
+    die("Error en la preparación de la consulta: " . $conn->error);
+  }
+
+  $stmt->bind_param("s", $email);
+  $stmt->execute();
+  $result = $stmt->get_result();
+
+  if ($result->num_rows === 1) {
+    $user = $result->fetch_assoc();
+    if (password_verify($password, $user['password'])) {
+      $stmt->close();
+      $conn->close();
+      return $user;
+    }
+  }
+
+  $stmt->close();
+  $conn->close();
+  return null;
+}
+
+/* logout */
+function cerrarSesion()
+{
+  session_unset();
+  session_destroy();
+}
+
 
 function insertarCriptomoneda($name, $network, $creator, $market_cap, $description, $enabled)
 {
@@ -210,7 +323,8 @@ function actualizarCriptomoneda($id, $name, $network, $creator, $market_cap, $de
   $enabled = isset($enabled) ? $enabled : $cripto_actual['enabled'];
 
   // Actualizar la criptomoneda
-  $sql = "UPDATE criptomonedas SET name = ?, network = ?, creator = ?, market_cap = ?, description = ?, enabled = ? WHERE id = ?";
+  $sql = "UPDATE criptomonedas SET name = ?, network = ?, creator = ?, market_cap = ?, description = ?, enabled = ? WHERE
+id = ?";
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("sssssii", $name, $network, $creator, $market_cap, $description, $enabled, $id);
 

@@ -7,13 +7,13 @@ let users = [
   },
 ];
 
-window.onclick = function(event) {
+window.onclick = function (event) {
   const modal = document.getElementById("myModal");
   if (event.target == modal) {
-      modal.style.display = "none";
-      loginForm.style.display = "none";  // Ocultar formulario al cerrar modal
+    modal.style.display = "none";
+    loginForm.style.display = "none"; // Ocultar formulario al cerrar modal
   }
-}
+};
 
 function showLogin() {
   const modal = document.getElementById("myModal");
@@ -29,7 +29,6 @@ function showRegister() {
   modal.style.display = "block";
   const registerForm = document.getElementById("registerForm");
   registerForm.style.display = "flex";
-
 }
 function closeLogin() {
   const modal = document.getElementById("myModal");
@@ -48,14 +47,12 @@ function showLoginForm() {
   options.style.display = "none";
 }
 
-
 function submit(event) {
   event.preventDefault();
   window.location.href = "soporte.php";
-
 }
 
-function register(event) {
+/* function register(event) {
   event.preventDefault();
 
   const email = document.getElementById("register-email").value.trim();
@@ -104,18 +101,24 @@ function login(event) {
     console.log(users);
     alert("Usuario o contraseña incorrectos");
   }
-}
+} */
 
 /* Inicio de Sesion con Google */
 function decodeJwtResponse(token) {
-  const base64Url = token.split('.')[1];
-  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-  }).join(''));
+  const base64Url = token.split(".")[1];
+  const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  const jsonPayload = decodeURIComponent(
+    atob(base64)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
 
   return JSON.parse(jsonPayload);
 }
+/* OLD
 
 function googleResponse(response) {
   closeLogin();
@@ -130,6 +133,36 @@ function googleResponse(response) {
   alert(`Inicio de sesión exitoso, bienvenido ${responsePayload.name}`);
   
 
+}*/
+
+function googleResponse(response) {
+  closeLogin();
+  console.log("Encoded JWT ID token: " + response.credential);
+  const responsePayload = decodeJwtResponse(response.credential);
+  console.log("ID: " + responsePayload.sub);
+  console.log("Full Name: " + responsePayload.name);
+  console.log("Given Name: " + responsePayload.given_name);
+  console.log("Family Name: " + responsePayload.family_name);
+  console.log("Image URL: " + responsePayload.picture);
+  console.log("Email: " + responsePayload.email);
+  alert(`Inicio de sesión exitoso, bienvenido ${responsePayload.name}`);
+
+  // Enviar el token JWT al servidor PHP mediante AJAX
+  const token = response.credential;
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "guardar_token.php");
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      console.log("Token enviado correctamente al servidor");
+      // Redirigir o actualizar la página según sea necesario
+      window.location.href = "index.php"; // Ejemplo de redirección
+    } else {
+      console.log("Error al enviar el token al servidor");
+      // Manejar el error si es necesario
+    }
+  };
+  xhr.send("token=" + encodeURIComponent(token));
 }
 
 /*

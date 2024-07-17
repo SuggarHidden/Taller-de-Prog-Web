@@ -26,11 +26,21 @@
       <a href="soporte.php">Soporte</a>
     </div>
     <div id="userOptions">
-    <button id="btnLogging" onclick="showLogin()">Inicia Sesion</button></a>
-    <button id="btnRegister" onclick="showRegister()">Registrate</button></a>
+      <?php
+      include 'connect.php';
+
+      if (isset($_SESSION['user_id'])) {
+        $username = $_SESSION['username'];
+        echo "¡Hola, $username!";
+        echo '<a href="logout.php">Cerrar sesión</a>';
+      } else {
+        echo '<button id="btnLogging" onclick="showLogin()">Iniciar Sesión</button>';
+        echo '<button id="btnRegister" onclick="showRegister()">Registrarse</button>';
+      }
+      ?>
     </div>
   </header>
-  
+
   <section class="support-header">
     <h2>Centro de Soporte</h2>
     <div class="search-bar">
@@ -103,19 +113,20 @@
     <h2>Contáctanos</h2>
     <form action="https://formsubmit.co/lichkingnetwork@gmail.com" method="POST">
       <div class="contact-form">
-      <label for="name">Nombre:</label>
-      <input type="text" id="name" name="name" placeholder="Tu nombre" required class="contact-atribute">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" placeholder="Tu nombre" required class="contact-atribute">
       </div>
       <div class="contact-form">
-      <label for="email">Correo:</label>
-      <input type="email" id="email" name="email" placeholder="Tu correo" required class="contact-atribute">
+        <label for="email">Correo:</label>
+        <input type="email" id="email" name="email" placeholder="Tu correo" required class="contact-atribute">
       </div class="contact-form">
       <div class="contact-form">
-      <label for="message">Mensaje:</label>
-      <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" required class="contact-atribute"></textarea>
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" required
+          class="contact-atribute"></textarea>
       </div>
       <div class="contact-form">
-      <button type="submit" id="enviarBtn">Enviar</button>
+        <button type="submit" id="enviarBtn">Enviar</button>
       </div>
     </form>
   </section>

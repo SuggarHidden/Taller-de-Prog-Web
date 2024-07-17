@@ -1,3 +1,13 @@
+<?php
+include 'connect.php';
+// Incluir connect.php para asegurar que la sesión esté disponible
+if (!isset($_SESSION['user_id'])) {
+  // Redirigir a la página de inicio de sesión si no está autenticado
+  header("Location: index.php");
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -8,7 +18,7 @@
   <link rel="stylesheet" type="text/css" href="./styles/global.css" />
   <link rel="stylesheet" type="text/css" href="./styles/mercados.css" />
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  <link rel="stylesheet" type="text/css" href="./styles/login.css" /> 
+  <link rel="stylesheet" type="text/css" href="./styles/login.css" />
   <title>Crypto Pigeon Market</title>
 </head>
 
@@ -27,8 +37,17 @@
       <a href="soporte.php">Soporte</a>
     </div>
     <div id="userOptions">
-    <button id="btnLogging" onclick="showLogin()">Inicia Sesion</button></a>
-    <button id="btnRegister" onclick="showRegister()">Registrate</button></a>
+      <?php
+
+      if (isset($_SESSION['user_id'])) {
+        $username = $_SESSION['username'];
+        echo "¡Hola, $username!";
+        echo '<a href="logout.php">Cerrar sesión</a>';
+      } else {
+        echo '<button id="btnLogging" onclick="showLogin()">Iniciar Sesión</button>';
+        echo '<button id="btnRegister" onclick="showRegister()">Registrarse</button>';
+      }
+      ?>
     </div>
   </header>
   <section class="support-header">
@@ -37,7 +56,6 @@
 
   <div class="crypto-section">
     <?php
-    include 'connect.php';
     $criptomonedas = obtenerCriptomonedas();
 
     foreach ($criptomonedas as $cripto):

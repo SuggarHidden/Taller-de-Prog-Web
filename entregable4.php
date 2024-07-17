@@ -25,8 +25,18 @@
       <a href="soporte.php">Soporte</a>
     </div>
     <div id="userOptions">
-    <button id="btnLogging" onclick="showLogin()">Inicia Sesion</button></a>
-    <a href="register.php"><button id="btnRegister">Registrate</button></a>
+      <?php
+      include 'connect.php';
+
+      if (isset($_SESSION['user_id'])) {
+        $username = $_SESSION['username'];
+        echo "¡Hola, $username!";
+        echo '<a href="logout.php">Cerrar sesión</a>';
+      } else {
+        echo '<button id="btnLogging" onclick="showLogin()">Iniciar Sesión</button>';
+        echo '<button id="btnRegister" onclick="showRegister()">Registrarse</button>';
+      }
+      ?>
     </div>
   </header>
 
@@ -47,7 +57,7 @@
 
         <label for="tarjeta">Tipo de tarjeta:</label>
         <select id="tarjeta" name="tarjeta" required>
-          <option value="" disabled selected >Seleccione una tarjeta</option >
+          <option value="" disabled selected>Seleccione una tarjeta</option>
           <option value="visa" <?php echo (isset($_POST['tarjeta']) && $_POST['tarjeta'] == 'visa') ? 'selected' : ''; ?>>
             Visa</option>
           <option value="mastercard" <?php echo (isset($_POST['tarjeta']) && $_POST['tarjeta'] == 'mastercard') ? 'selected' : ''; ?>>MasterCard</option>
@@ -59,8 +69,10 @@
       </form>
 
       <?php
-      if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['action'] == 'Calcular' && 
-      isset($_POST['monto']) && isset($_POST['meses']) && isset($_POST['tarjeta'])) {
+      if (
+        $_SERVER["REQUEST_METHOD"] == "POST" && $_POST['action'] == 'Calcular' &&
+        isset($_POST['monto']) && isset($_POST['meses']) && isset($_POST['tarjeta'])
+      ) {
         $monto = floatval($_POST['monto']);
         $meses = intval($_POST['meses']);
         $tarjeta = $_POST['tarjeta'];
@@ -108,7 +120,7 @@
       }
       ?>
     </section>
-    
+
     <section id="num_aleatorios">
       <h3>3. Generar Números Aleatorios</h3>
       <form action="" method="post">
@@ -119,7 +131,7 @@
       </form>
 
       <?php
-      if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cantidad'])  && $_POST['action'] == 'Generar') {
+      if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['cantidad']) && $_POST['action'] == 'Generar') {
         // ES UN MATH RANDOM
         function generar_numero_aleatorio()
         {
@@ -170,7 +182,7 @@
       }
       ?>
     </section>
-    
+
     <section id="mcm&mcd">
       <h3>4. MCD y MCM</h3>
       <form action="" method="post">
@@ -187,7 +199,7 @@
       </form>
 
       <?php
-      if ($_SERVER["REQUEST_METHOD"] == "POST"  && $_POST['action'] == 'CalcularMCM') {
+      if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['action'] == 'CalcularMCM') {
         function mcd($a, $b)
         {
           while ($b != 0) {
@@ -217,10 +229,10 @@
       }
       ?>
     </section>
-  </div>
+    </div>
   </section>
 
-    
+
   <script src="main.js"></script>
 </body>
 <?php include 'footer.php'; ?>

@@ -29,8 +29,18 @@
       <a href="soporte.php">Soporte</a>
     </div>
     <div id="userOptions">
-      <button id="btnLogging" onclick="showLogin()">Inicia Sesion</button></a>
-      <button id="btnRegister" onclick="showRegister()">Registrate</button></a>
+      <?php
+      include 'connect.php';
+
+      if (isset($_SESSION['user_id'])) {
+        $username = $_SESSION['username'];
+        echo "¡Hola, $username!";
+        echo '<a href="logout.php">Cerrar sesión</a>';
+      } else {
+        echo '<button id="btnLogging" onclick="showLogin()">Iniciar Sesión</button>';
+        echo '<button id="btnRegister" onclick="showRegister()">Registrarse</button>';
+      }
+      ?>
     </div>
   </header>
   <div class="imagenes">
@@ -46,8 +56,8 @@
     <img id="star5" src="./images/star1.png" alt="star5" />
     <img id="star6" src="./images/star2.png" alt="star6" />
   </div>
-  
-   </div>
+
+  </div>
   </div>
   <div class="container">
     <h2>LAS CRIPTOMONEDAS<br />MAS CLARAS Y SIMPLES</h2>

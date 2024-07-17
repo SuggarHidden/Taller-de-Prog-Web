@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,8 +27,23 @@
       <a href="soporte.php">Soporte</a>
     </div>
     <div id="userOptions">
-    <button id="btnLogging" onclick="showLogin()">Inicia Sesion</button></a>
-    <button id="btnRegister" onclick="showRegister()">Registrate</button></a>
+      <?php
+      include 'connect.php';
+
+      if (!isset($_SESSION['user_id'])) {
+        header("Location: index.php");
+        exit;
+      }
+
+      if (isset($_SESSION['user_id'])) {
+        $username = $_SESSION['username'];
+        echo "¡Hola, $username!";
+        echo '<a href="logout.php">Cerrar sesión</a>';
+      } else {
+        echo '<button id="btnLogging" onclick="showLogin()">Iniciar Sesión</button>';
+        echo '<button id="btnRegister" onclick="showRegister()">Registrarse</button>';
+      }
+      ?>
     </div>
   </header>
 
@@ -168,87 +184,87 @@
 
       <!-- Formulario 4: Eliminar Criptomoneda -->
       <form id="deleteCrypto" class="form-container" action="connect.php" method="post">
-      <form id="deleteCrypto" class="form-container" action="connect.php" method="post">
-        <h2 id="nomargin">Eliminar Criptomoneda</h2>
-        <p id="nomargin2">Elimina una criptomoneda de la plataforma.</p>
-        <div class="form-group">
-          <label for="delete-crypto">Criptomoneda a Eliminar</label>
-          <div class="select-container">
-            <select id="delete-crypto" name="delete_crypto">
-              <option value="" disabled selected>Selecciona una Criptomoneda</option>
-              <?php
-              include_once 'connect.php';
-              $criptomonedas = obtenerCriptomonedas();
+        <form id="deleteCrypto" class="form-container" action="connect.php" method="post">
+          <h2 id="nomargin">Eliminar Criptomoneda</h2>
+          <p id="nomargin2">Elimina una criptomoneda de la plataforma.</p>
+          <div class="form-group">
+            <label for="delete-crypto">Criptomoneda a Eliminar</label>
+            <div class="select-container">
+              <select id="delete-crypto" name="delete_crypto">
+                <option value="" disabled selected>Selecciona una Criptomoneda</option>
+                <?php
+                include_once 'connect.php';
+                $criptomonedas = obtenerCriptomonedas();
 
-              foreach ($criptomonedas as $cripto) {
-                echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
-              }
-              ?>
-            </select>
+                foreach ($criptomonedas as $cripto) {
+                  echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
+                }
+                ?>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="form-action">
-          <button type="submit" id="rojo">Eliminar Criptomoneda</button>
-        </div>
-      </form>
-
-      <form id="deletePrice" class="form-container" action="connect.php" method="post">
-        <h2 id="nomargin">Eliminar Precio de Criptomoneda</h2>
-        <p id="nomargin2">Elimina un precio específico de criptomoneda de la plataforma.</p>
-        <div class="form-group">
-          <label for="delete-price-crypto">Criptomoneda</label>
-          <div class="select-container">
-            <select id="delete-price-crypto" name="delete_price_crypto" onchange="loadPrices(this.value)">
-              <option value="" disabled selected>Selecciona una Criptomoneda</option>
-              <?php
-              include_once 'connect.php';
-              $criptomonedas = obtenerCriptomonedas();
-
-              foreach ($criptomonedas as $cripto) {
-                echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
-              }
-              ?>
-            </select>
+          <div class="form-action">
+            <button type="submit" id="rojo">Eliminar Criptomoneda</button>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="delete_price_crypto">Precio</label>
-          <div class="select-container">
-            <select id="delete_price_crypto" name="delete_price_crypto">
-              <option value="" disabled selected>Selecciona un Precio</option>
-            </select>
+        </form>
+
+        <form id="deletePrice" class="form-container" action="connect.php" method="post">
+          <h2 id="nomargin">Eliminar Precio de Criptomoneda</h2>
+          <p id="nomargin2">Elimina un precio específico de criptomoneda de la plataforma.</p>
+          <div class="form-group">
+            <label for="delete-price-crypto">Criptomoneda</label>
+            <div class="select-container">
+              <select id="delete-price-crypto" name="delete_price_crypto" onchange="loadPrices(this.value)">
+                <option value="" disabled selected>Selecciona una Criptomoneda</option>
+                <?php
+                include_once 'connect.php';
+                $criptomonedas = obtenerCriptomonedas();
+
+                foreach ($criptomonedas as $cripto) {
+                  echo "<option value='" . htmlspecialchars($cripto['id']) . "'>" . htmlspecialchars($cripto['name']) . "</option>";
+                }
+                ?>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="form-action">
-          <button type="submit" id="rojo" name="delete_crypto_price">Eliminar Precio</button>
-        </div>
-      </form>
+          <div class="form-group">
+            <label for="delete_price_crypto">Precio</label>
+            <div class="select-container">
+              <select id="delete_price_crypto" name="delete_price_crypto">
+                <option value="" disabled selected>Selecciona un Precio</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-action">
+            <button type="submit" id="rojo" name="delete_crypto_price">Eliminar Precio</button>
+          </div>
+        </form>
 
-      <script>
-        function loadPrices(idCripto) {
-          if (idCripto === "") {
-            return;
-          }
-
-          const xhr = new XMLHttpRequest();
-          xhr.open("GET", "get_prices.php?id=" + idCripto, true);
-          xhr.onload = function () {
-            if (this.status === 200) {
-              const prices = JSON.parse(this.responseText);
-              const select = document.getElementById("delete_price_crypto");
-              select.innerHTML = '<option value="" disabled selected>Selecciona un Precio</option>';
-
-              prices.forEach(price => {
-                const option = document.createElement("option");
-                option.value = price.id;
-                option.textContent = `${price.fecha}: $${price.precio}`;
-                select.appendChild(option);
-              });
+        <script>
+          function loadPrices(idCripto) {
+            if (idCripto === "") {
+              return;
             }
-          };
-          xhr.send();
-        }
-      </script>
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "get_prices.php?id=" + idCripto, true);
+            xhr.onload = function () {
+              if (this.status === 200) {
+                const prices = JSON.parse(this.responseText);
+                const select = document.getElementById("delete_price_crypto");
+                select.innerHTML = '<option value="" disabled selected>Selecciona un Precio</option>';
+
+                prices.forEach(price => {
+                  const option = document.createElement("option");
+                  option.value = price.id;
+                  option.textContent = `${price.fecha}: $${price.precio}`;
+                  select.appendChild(option);
+                });
+              }
+            };
+            xhr.send();
+          }
+        </script>
 
 
     </section>
@@ -259,4 +275,5 @@
   <?php include 'login-register.php'; ?>
   <?php include 'footer.php'; ?>
 </body>
+
 </html>

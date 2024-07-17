@@ -27,16 +27,24 @@ body {
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1%;
 }
 
 #register-section form label {
   margin-bottom: 5%;
 }
 
+input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#register-section form input[type="text"],
 #register-section form input[type="email"],
 #register-section form input[type="password"] {
   padding: 10px;
@@ -49,16 +57,14 @@ body {
   margin-top: 10%;
   width: 100%;
   padding: 10px;
-  border: 1px solid #FFF;
-  background: linear-gradient(180deg, #18C8FF 0%, #933FFE 100%);
+  border: 1px solid #fff;
+  background: linear-gradient(180deg, #18c8ff 0%, #933ffe 100%);
   color: white;
   border-radius: 5px;
   cursor: pointer;
   flex-shrink: 0;
-  
 }
 
 #register-section form button:hover {
   background-color: #0056b3;
 }
-
