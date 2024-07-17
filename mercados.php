@@ -116,10 +116,11 @@
 
     <?php endforeach; ?>
   </div>
+  <?php include 'footer.php'; ?>
+
   <script src="main.js"></script>
   <script src="https://accounts.google.com/gsi/client" async></script>
   <?php include 'login-register.php'; ?>
 </body>
-<?php include 'footer.php'; ?>
 
 </html>
