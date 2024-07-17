@@ -48,6 +48,13 @@ function showLoginForm() {
   options.style.display = "none";
 }
 
+
+function submit(event) {
+  event.preventDefault();
+  window.location.href = "soporte.php";
+
+}
+
 function register(event) {
   event.preventDefault();
 
