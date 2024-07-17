@@ -45,8 +45,8 @@
           <input type="email" name="email" id="email" placeholder="correo@ejemplo.com" required>
           <label for="password">Contraseña</label>
           <input type="password" name="password" id="password" placeholder="*******" required>
-          <label for="confirm-password">Confirmar Contraseña</label>
-          <input type="password" name="confirm-password" id="confirm-password" placeholder="*******" required>
+            <label for="confirm-password">Confirmar Contraseña</label>
+            <input type="password" name="confirm-password" id="confirm-password" placeholder="*******" required>
           <button type="submit" id="btnEnviar">Iniciar Sesión</button>
         </form>
       </section>
