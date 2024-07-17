@@ -99,19 +99,24 @@
     </div>
 
   </section>
-  <section>
+  <section class="contact">
     <h2>Contáctanos</h2>
     <form action="https://formsubmit.co/lichkingnetwork@gmail.com" method="POST">
+      <div class="contact-form">
       <label for="name">Nombre:</label>
-      <input type="text" id="name" name="name" placeholder="Tu nombre" required>
-
+      <input type="text" id="name" name="name" placeholder="Tu nombre" required class="contact-atribute">
+      </div>
+      <div class="contact-form">
       <label for="email">Correo:</label>
-      <input type="email" id="email" name="email" placeholder="Tu correo" required>
-
+      <input type="email" id="email" name="email" placeholder="Tu correo" required class="contact-atribute">
+      </div class="contact-form">
+      <div class="contact-form">
       <label for="message">Mensaje:</label>
-      <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" required></textarea>
-
-      <button type="submit">Enviar</button>
+      <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" required class="contact-atribute"></textarea>
+      </div>
+      <div class="contact-form">
+      <button type="submit" id="enviarBtn">Enviar</button>
+      </div>
     </form>
   </section>
 

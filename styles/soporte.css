@@ -105,6 +105,62 @@ gap: 10px;
     padding-left: 2%;
 }
 
+/* contactanos css */
+
+.contact {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: flex-start;
+}
+
+
+
+.contact-atribute{
+    margin-top: 10px;
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+#enviarBtn {
+    background: linear-gradient(180deg, #18C8FF 0%, #933FFE 100%);
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: none;
+  color: rgb(255, 255, 255);
+  min-width: 120px;
+  min-height: 46px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  font-family: TikTokFont, PingFangSC, sans-serif;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 6px 8px;
+  user-select: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 21px;
+}
+
 /* media queries */
 
 @media (max-width: 500px) {

@@ -89,23 +89,31 @@ header > a > h1 {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+
+  
 }
 
 #btnRegister {
   border: 1px solid white;
-  border-radius: 10px;
-  font-family: Inter;
-  cursor: pointer;
-  padding: 10px 20px;
-  background: linear-gradient(180deg, #18c8ff 0%, #933ffe 100%);
-
-  color: #fff;
-  text-align: center;
-  font-family: Inter;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+    border-radius: 10px;
+    font-family: Inter;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: linear-gradient(180deg, #18c8ff 0%, #933ffe 100%);
+    color: #fff;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: none;
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
 }
 
 #userOptions {
