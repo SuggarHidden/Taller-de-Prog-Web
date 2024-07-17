@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +7,8 @@
   <link rel="stylesheet" type="text/css" href="./styles/global.css">
   <link rel="stylesheet" type="text/css" href="./styles/mercados.css">
   <link rel="stylesheet" type="text/css" href="./styles/gestor-criptos.css">
+  <link rel="stylesheet" type="text/css" href="./styles/login.css" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <title>Crypto Pigeon Market</title>
 </head>
 
@@ -26,7 +27,7 @@
     </div>
     <div id="userOptions">
     <button id="btnLogging" onclick="showLogin()">Inicia Sesion</button></a>
-    <a href="register.php"><button id="btnRegister">Registrate</button></a>
+    <button id="btnRegister" onclick="showRegister()">Registrate</button></a>
     </div>
   </header>
 
@@ -254,6 +255,8 @@
   </section>
 
   <script src="main.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <?php include 'login-register.php'; ?>
   <?php include 'footer.php'; ?>
 </body>
 </html>

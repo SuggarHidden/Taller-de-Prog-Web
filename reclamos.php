@@ -6,6 +6,8 @@
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="./styles/global.css" />
     <link rel="stylesheet" type="text/css" href="./styles/reclamos.css" />
+  <link rel="stylesheet" type="text/css" href="./styles/login.css" />
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <title>Crypto Pigeon Market</title>
   </head>
   <body>
@@ -23,7 +25,7 @@
       </div>
       <div id="userOptions">
       <button id="btnLogging" onclick="showLogin()">Inicia Sesion</button></a>
-      <a href="register.php"><button id="btnRegister">Registrate</button></a>
+      <button id="btnRegister" onclick="showRegister()">Registrate</button></a>
       </div>
     </header> 
     <section id="reclamos">
@@ -87,4 +89,7 @@
    
   </body>
   <?php include 'footer.php'; ?>
+  <script src="main.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async></script>
+  <?php include 'login-register.php'; ?>
 </html>

@@ -6,7 +6,9 @@
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="./styles/global.css" />
     <link rel="stylesheet" type="text/css" href="./styles/nosotros.css" />
-    <title>Crypto Pigeon Market</title>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <link rel="stylesheet" type="text/css" href="./styles/login.css" />
+      <title>Crypto Pigeon Market</title>
   </head>
   <body>
     <header>
@@ -23,13 +25,13 @@
       </div>
       <div id="userOptions">
       <button id="btnLogging" onclick="showLogin()">Inicia Sesion</button></a>
-      <a href="register.php"><button id="btnRegister">Registrate</button></a>
+      <button id="btnRegister" onclick="showRegister()">Registrate</button></a>
       </div>
     </header>
     <section>
       <h2>CRIPTOMONEDAS</h2>
       <div id="left-img">
-        <img id="crypto" src="images/criptocoin.png" alt="cripto" />
+        <img id="crypto" src="images/criptocoin.png" alt="cripto" class="img"/>
         <p>
           Las criptomonedas son formas digitales de dinero que utilizan
           criptografía para garantizar transacciones seguras y para controlar la
@@ -47,10 +49,10 @@
             no están sujetas a regulaciones gubernamentales tradicionales.
           </p>
         </div>
-        <img src="images/desentralizacion.png" alt="cripto" />
+        <img src="images/desentralizacion.png" alt="cripto" class="img"/>
       </div>
       <div id="left-img">
-        <img src="images/globalidad.png" alt="cripto" />
+        <img src="images/globalidad.png" alt="cripto" class="img" />
         <div>
           <h3>Globalidad</h3>
           <p>
@@ -61,7 +63,7 @@
           </p>
         </div>
       </div>
-      <div id="right-img">
+      <div id="right-img" class="img">
         <div>
           <h3>Contratos inteligentes</h3>
           <p>
@@ -70,10 +72,10 @@
             términos y condiciones predefinidos.
           </p>
         </div>
-        <img src="images/contract.png" alt="cripto" />
+        <img src="images/contract.png" alt="cripto"  class="img"/>
       </div>
       <div id="left-img">
-        <img src="images/anon.png" alt="cripto" />
+        <img src="images/anon.png" alt="cripto" class="img" />
         <div>
           <h3>Anonimato</h3>
           <p>
@@ -91,5 +93,7 @@
     </section>
     <?php include 'footer.php'; ?>
     <script src="main.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+    <?php include 'login-register.php'; ?>
   </body>
 </html>
