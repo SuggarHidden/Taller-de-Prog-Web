@@ -22,8 +22,8 @@
         <a href="soporte.php">Soporte</a>
       </div>
       <div id="userOptions">
-        <a href="login.php"><button id="btnLogging">Inicia Sesion</button></a>
-        <a href="register.php"><button id="btnRegister">Registrate</button></a>
+      <button id="btnLogging" onclick="showLogin()">Inicia Sesion</button></a>
+      <a href="register.php"><button id="btnRegister">Registrate</button></a>
       </div>
     </header> 
     <section id="reclamos">

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="./styles/global.css" />
     <link rel="stylesheet" type="text/css" href="./styles/index.css" />
@@ -25,7 +26,7 @@
       </div>
       <div id="userOptions">
         <button id="btnLogging" onclick="showLogin()">Inicia Sesion</button></a>
-        <a href="register.php"><button id="btnRegister">Registrate</button></a>
+        <button id="btnRegister" onclick="showRegister()">Registrate</button></a>
       </div>
     </header>
     <div class="imagenes">
@@ -44,13 +45,27 @@
     <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeLogin()">&times;</span>
-        <h2 id ="modalTitle">Iniciar sesión</h2>
         <div id="optionsLogin">
+        <h2 id ="modalTitle">Iniciar sesión</h2>
         <div class="button-wrapper">
-            <button class="login-btn google" onclick="window.open('https://accounts.google.com/ServiceLogin', '_blank');">
-                <img src="./images/google-icon.svg" alt="Google Icon" class="button-icon">
-                Continuar con Google
-            </button>
+          <div id="g_id_onload"
+              data-client_id="794519880683-1r3hbq5j4tc0ipir7b11fppp0stta5ff.apps.googleusercontent.com"
+              data-context="signin"
+              data-ux_mode="popup"
+              data-callback="googleResponse"
+              data-auto_prompt="false">
+          </div>
+
+          <div class="g_id_signin"
+              data-type="standard"
+              data-shape="rectangular"
+              data-theme="outline"
+              data-text="signin_with"
+              data-size="large"
+              data-locale="es"
+              data-logo_alignment="left"
+              data-width="400px">
+          </div>
         </div>
           <div class="button-wrapper">
           <button class="login-btn email" onclick="showLoginForm()">
@@ -61,6 +76,7 @@
         
         <!-- Formulario de inicio de sesión oculto -->
         <div id="loginForm" style="display:none;">
+        <h2 id ="modalTitle">Iniciar sesión</h2>
         <section class="login">
         <form action="" method="post" class="form" onsubmit="login(event)">
           <label id ="emailLabel" for="email">Correo</label>
@@ -71,7 +87,21 @@
         </form>
         </section>
         </div>
+        <!-- Formulario de registro oculto -->
+        <div id="registerForm" style="display:none;">
+      <h2 id="modalTitle">Regístrate</h2>
+      <section class="login">
+      <form action="" method="post" class="form" onsubmit="register(event)">
+        <label id="emailLabel" for="register-email">Correo</label>
+        <input type="email" name="email" id="register-email" placeholder="Correo" required>
+        <input type="password" name="password" id="register-password" placeholder="Contraseña" required>
+        <input type="password" name="confirm-password" id="register-confirm-password" placeholder="Confirmar contraseña" required>
+        <button type="submit" id="register-btnEnviar">Registrarse</button>
+      </form>
+    </section>
     </div>
+    </div>
+  </div>
   </div>
     <div class="container">
       <h2>LAS CRIPTOMONEDAS<br />MAS CLARAS Y SIMPLES</h2>
@@ -83,6 +113,7 @@
         <button id="btnInfo">Conoce más</button>
       </a>
     </div>
+    <script src="https://accounts.google.com/gsi/client" async></script>
     <script src="main.js"></script>
   </body>
 </html>

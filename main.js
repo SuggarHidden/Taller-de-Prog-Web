@@ -21,10 +21,22 @@ function showLogin() {
   options.style.display = "flex";
   modal.style.display = "block";
 }
+
+function showRegister() {
+  const modal = document.getElementById("myModal");
+  const options = document.getElementById("optionsLogin");
+  options.style.display = "none";
+  modal.style.display = "block";
+  const registerForm = document.getElementById("registerForm");
+  registerForm.style.display = "flex";
+
+}
 function closeLogin() {
   const modal = document.getElementById("myModal");
   const loginForm = document.getElementById("loginForm");
   const options = document.getElementById("optionsLogin");
+  const registerForm = document.getElementById("registerForm");
+  registerForm.style.display = "none";
   modal.style.display = "none";
   loginForm.style.display = "none";
   options.style.display = "block"; // Restablecer la visibilidad de opciones
@@ -38,22 +50,28 @@ function showLoginForm() {
 
 function register(event) {
   event.preventDefault();
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-  const confirmPassword = document.getElementById("confirm-password").value;
-  if (password != confirmPassword) {
-    alert("Las contraseñas no coinciden");
-    return;
-  } else if (password === "" || confirmPassword === "") {
+
+  const email = document.getElementById("register-email").value.trim();
+  const password = document.getElementById("register-password").value.trim();
+  const confirmPassword = document.getElementById("register-confirm-password").value.trim();
+
+  if (email === "" || password === "" || confirmPassword === "") {
     alert("Necesitas llenar todos los campos");
     return;
   }
+
+  if (password !== confirmPassword) {
+    alert("Las contraseñas no coinciden");
+    return;
+  }
+
   users.push({
     email: email,
     password: password,
   });
+
   alert("Usuario registrado exitosamente");
-  window.location.href = "login.html";
+  window.location.href = "index.php";
 }
 
 function login(event) {
@@ -80,6 +98,41 @@ function login(event) {
     alert("Usuario o contraseña incorrectos");
   }
 }
+
+/* Inicio de Sesion con Google */
+function decodeJwtResponse(token) {
+  const base64Url = token.split('.')[1];
+  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  return JSON.parse(jsonPayload);
+}
+
+function googleResponse(response) {
+  console.log("Encoded JWT ID token: " + response.credential);
+  const responsePayload = decodeJwtResponse(response.credential);
+  console.log("ID: " + responsePayload.sub);
+  console.log('Full Name: ' + responsePayload.name);
+  console.log('Given Name: ' + responsePayload.given_name);
+  console.log('Family Name: ' + responsePayload.family_name);
+  console.log("Image URL: " + responsePayload.picture);
+  console.log("Email: " + responsePayload.email);
+  alert("Inicio de sesión exitoso");
+  /*window.location.href = "mercados.html";*/
+
+}
+
+/*
+window.onload = function () {
+  google.accounts.id.initialize({
+    client_id: '794519880683-k71camhqd66mdr5bl2vt6qpq8s1u447l.apps.googleusercontent.com',
+    callback: handleCredentialResponse
+  });
+  google.accounts.id.prompt();
+};
+*/
 
 /* Para ingresar el correo en el footer */
 
