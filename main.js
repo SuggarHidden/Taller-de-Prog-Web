@@ -111,6 +111,7 @@ function decodeJwtResponse(token) {
 }
 
 function googleResponse(response) {
+  closeLogin();
   console.log("Encoded JWT ID token: " + response.credential);
   const responsePayload = decodeJwtResponse(response.credential);
   console.log("ID: " + responsePayload.sub);
@@ -119,8 +120,8 @@ function googleResponse(response) {
   console.log('Family Name: ' + responsePayload.family_name);
   console.log("Image URL: " + responsePayload.picture);
   console.log("Email: " + responsePayload.email);
-  alert("Inicio de sesión exitoso");
-  /*window.location.href = "mercados.html";*/
+  alert(`Inicio de sesión exitoso, bienvenido ${responsePayload.name}`);
+  
 
 }
 
